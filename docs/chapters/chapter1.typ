@@ -17,18 +17,21 @@ This often creates a communication  gap between users and the authorities respon
 === Issues
 #let issue1 = text([Users often struggle to reach the right maintenance personnel, resulting in delays or ignored requests. Without a centralized and accessible system, reporting issues becomes time-consuming and unreliable.])
 #let issue2 = text([Maintenance teams often work without proper tools to prioritize, assign, and track tasks. This leads to missed or delayed repairs, no clear ownership of responsibilities, and no data to measure performance or improve operations.])
-#let Issues = text([Users rarely receive updates on the status of their maintenance requests. This lack of visibility creates frustration and reduces trust in the system, while maintenance teams struggle to keep everyone informed. ])
+#let issue3 = text([Users rarely receive updates on the status of their maintenance requests. This lack of visibility creates frustration and reduces trust in the system, while maintenance teams struggle to keep everyone informed. ])
+#let issue4 = text([Users lack Privacy through and through with traditional reporting methods, this can lead to an upset and distrust to some people. Users care for their own privacy hence why some reports have never been sent before because of their own worry about the system.  ])
 #table(stroke: none,columns: 2,
         [*Issue*],[*weight*],
         [#issue1],[10],
         [#issue2],[9],
-        [#issue1],[7],
+        [#issue3],[7],
+        [#issue4],[6]
 )
 
 === Objectives 
 + Simplify and centralize issue reporting through a user-friendly web/mobile interface that allows users to easily report maintenance problems and is available 24/7.
 + Enhance communication and transparency by providing real-time updates and notifications on request statuses
 + Create an analytics dashboard to provide administrators with insights and help them to identify trends and areas needing improvement.
++ Create a confidential system that ensures users anonymity and keeping their data secure and private from intruders.
 === Requirements
 + The system must ensure data security and protect the privacy of all users.
 + The system must be intuitive and user-friendly, allowing non-technical users to navigate and interact with it easily.
@@ -38,11 +41,30 @@ This often creates a communication  gap between users and the authorities respon
 === Constraints
 + Development costs must not exceed 45,000 JD
 + The project should be done by Sunday 4, Jan 2026
-=== Vision Document 
-#text(red)[
-  *Not done yet.*
-]
+=== Vision Document
+==== Problem Description
+Ever since the digitalization of almost everything, people's expectations rose. People are
+in constant demand of systems that fulfills there needs. Current methods are almost obsolete
+they are ineffecient and insuffecient because the older methods have lack of transparency,
+increased delays, and unavaliable hence the overall user frustration, not to mention the 
+diffuculty of managing the reports.
 
+Without a system to hold everything together it require a lot of effort to pull through the maintenance tasks.
+To satisfy users, they need a system to adapt to their needs. Providing a smooth, painless experience
+through an easy to use interface.A system is needed such that it enables feedback submission, tracks administrative responses, and provides data-driven
+insights for continuous service improvement. Delaying this solution risks further dissatisfaction and
+missed opportunities for institutional growth.
+==== System Capabilities
++ Ticket submission with images and location info
++ Role-based dashboards for users, technicians, and administrators
++ Priority-based task assignment and scheduling
++ Push/email notifications for status updates
++ Maintenance history and analytics for equipment and areas
+==== Business Benefits
+-
+-
+-
+-
 == Feasbility Studies
 === Techinical Feasibility
 The technical feasibility assesses the technological components necessary 
