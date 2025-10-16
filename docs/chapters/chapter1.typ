@@ -153,3 +153,99 @@ it complies with the policies set by the country's laws and Institutions.
 , caption: [Project Development Schedule]
 )]
 
+=== Legal Feasibility
+The proposed platform fully aligns with Jordanian laws,
+university policies, and institutional standards. 
+All required approvals will be obtained from the University of Jordan’s relevant
+departments before deployment. The system does not infringe upon any legal frameworks
+or intellectual property rights.
+
+*Licensing Compliance:*
+All development tools, frameworks,
+and libraries used in the platform
+will be properly licensed.
+Open-source components will
+be used in accordance with
+their respective licenses,
+while any proprietary
+technologies will be incorporated only after acquiring valid usage rights.
+
+*Copyright and Intellectual Property Protection:* 
+The platform will comply with the Jordanian Copyright Law No. 22 of 1992 and its amendments.
+Any third-party content whether text, images, or software will be original, licensed,
+or used under fair use conditions with full attribution.
+
+*Data Privacy and Confidentiality:*
+To comply with the Jordanian Personal Data Protection Law No. 24 of 2023, the system will:
+
++ Obtain explicit user consent prior to collecting or processing personal information.
++ Employ encryption and secure storage for sensitive data.
++ Ensure that personal data is used strictly for its intended purpose and accessed only by authorized personnel.
+
+*Electronic Communication and Records Compliance:*
+Under the Electronic Transactions Law No. 15 of 2015,
+all digital communications and transactions carried out
+through the platform will be handled as legally recognized
+records, protected through appropriate technical and procedural safeguards.
+
+*Terms of Service and Legal Disclosures:*
+Users will be provided with clear Terms of Service and Privacy Policy agreements outlining:
+- Data collection and usage practices
+- User rights and responsibilities
+- Risk disclosures and security provisions
+These documents will comply with both university IT regulations and national legal requirements. 
+
+== Recommended Solution and Expected Project Deliverables
+To manage the maintenance requests of issues as they arise,
+we can use a great solution: a Maintenance Request software system
+that allows requesters to report maintenance issues directly
+to the maintenance team using a web-based form or mobile app.
+It helps streamline communication,
+submission, and tracking without wasting time
+gathering complete and accurate information or delaying repairs.
+The people who the maintenance teams usually rely on,
+such as employees and visitors,
+will be able to submit detailed maintenance
+forms that include descriptions, images,
+and location information. Other processes
+such as workflows for reviewing and
+approving requests will be managed through a
+dashboard that allows the team to assign,
+prioritize, and monitor tasks.
+Technicians can update the status of
+each request in real time, and notifications
+will be sent to users to inform them about progress and completion.
+
+#underline[Expected Deliverables:]
+A Maintenance Request Software that will include:
+- *Request Submission:*
+Maintenance teams will accept requests through
+the system to ensure they collect all necessary
+information to proceed with other maintenance processes.\
+Users will submit it like a post; It'll have a title, location, photo and description.
+
+- *Review and Approve Requests:*
+A dashboard and analysis tool will help
+the organization review all forms and decide
+which requests will be approved.
+Each request will be evaluated to
+ensure that it is valid,
+not redundant, and not already being addressed.
+
+*Status Updates to Deliver Better Customer Service:*
+To build trust between managers and customers, there will be a communication tool that responds back to requesters to inform them that their requests are accepted and to update them about the status of their issues until completion. These updates will be automated through real-time notifications.
+
+*Database Design and Documentation:*
+For storing and tracking requests, there will be request records that provide a clear view of all issues, and a database that documents what issues were reported, how they were resolved, and when. This will help with future planning and decision-making, as well as provide tools for summarizing the analysis, design, and implementation process.
+
+*Performance Tracking:*
+Updates on team work status for measuring team performance will help ensure that the original problem has been addressed and will identify bottlenecks in the request process. This will lead to providing excellent customer service and demonstrate that the maintenance team is responsive, works well, and continues improving the organization’s overall reputation. This will be done by tracking average response time and turnaround time.
+
+== Local and Global Impact of the Proposed Solution 
+*Locally:* The maintenance request system will ensure accuracy and enable the maintenance team to begin planning and scheduling maintenance work more quickly through automatically generated work orders from approved requests. Following best practices will also provide better customer service in this area. Automation means better experiences! It will reduce delays in handling requests, minimize manual paperwork, and ensure maintenance work is managed from start to finish through automated tools. This can lead to better resource management, higher efficiency, and greater satisfaction not just among staff but also among customers by keeping them updated about the status of their requests without delaying feedback.
+
+*Globally:* It contributes to digital transformation and sustainability efforts. It is essential for businesses of all sizes to rely on such systems in their operations to efficiently allocate resources and maximize the performance of their assets.
+A well-designed maintenance request system demonstrates how technology enables organizations to make data-driven decisions to achieve better operational efficiency by centralizing all maintenance requests in one platform.
+
+
+
