@@ -36,10 +36,13 @@ This often creates a communication  gap between users and the authorities respon
 + Maintenance reports must be submitted anonymously to ensure user comfort and honesty.
 
 === Constraints
-+ Development costs must not exceed \$45000 JDS
++ Development costs must not exceed 45,000 JD
 + The project should be done by Sunday 4, Jan 2026
 === Vision Document 
-  woah not done yet
+#text(red)[
+  *Not done yet.*
+]
+
 == Feasbility Studies
 === Techinical Feasibility
 The technical feasibility assesses the technological components necessary 
@@ -66,18 +69,87 @@ It will have clear privacy guidelines and mechanisms to ensure that our users wi
 it complies with the policies set by the country's laws and Institutions.
 #pagebreak()
 === Economic Feasibility
-Development Costs :   
+*Development Costs:*   
 #align(center)[
   #figure(
   table(
   columns: 2,align:left,
 [*Expense Category*], [*Amount*],
-[Salaries],[\$20,000 JD],
-[Equipment and installations],[\$8,000 JD],
-[Training],[\$1,500 JD],
-[Facilities],[\$2,000 JD],
-[Utilities],[\$1,000 JD],
-[Travel\\Miscellaneous],[\$2,000 JD]
-  )
+[Salaries],[20,000 JD],
+[Equipment and installations],[8,000 JD],
+[Training],[1,500 JD],
+[Facilities],[2,000 JD],
+[Utilities],[1,000 JD],
+[Travel\\Miscellaneous],[2,000 JD],
+ [*Total*],[*39,500 JD*] )
 , caption: [Devlopment Costs]
 )]
+
+*Operational Costs:*   
+#align(center)[
+  #figure(
+  table(
+  columns: 2,align:left,
+[*Service*], [*Annual Cost(Per year)*],
+[Operational maintenance],[7,000 JD],
+[*Total Cost*],[*7,000 JD*]
+  )
+, caption: [Operational Costs]
+)]
+
+#align(center)[
+  #figure(
+  table(
+  columns: 1,align:left,
+
+    align(center)[*Intangible Benefits*],
+      [Enhanced Institutional Trust and  reputation],
+      [Increasing users satisfaction],
+      [Saving time and effort for both users and Institutions],
+  )
+, caption: [Intangible Benefits]
+)]
+#pagebreak()
+*Benefit and Payback Analysis:*
+#align(center)[
+  #figure(
+    table(
+      align: horizon,
+      columns: 7,
+        [*Category*], [*Year 0*], [*Year 1*], [*Year 2*], [*Year 3*], [*Year 4*], [*Year 5*],
+        [*Value of benefits*], [0], [16,000 JD], [17,000 JD], [18,000 JD], [19,000 JD], [20,000 JD],
+        [*Development costs*], [-39,500 JD], [0], [0], [0], [0], [0],
+        [*Annual expenses*], [0], [-7,000 JD], [-7,000 JD], [-7,000 JD], [-7,000 JD], [-7,000 JD],
+        [*Net Benefit / Costs*], [-39,500 JD], [9,000 JD], [10,000 JD], [11,000 JD], [12,000 JD], [13,000 JD],
+        [*Discount Rate (7%)*], [1], [0.934], [0.873], [0.813], [0.763], [0.713],
+        [*Net Present Value (NPV)*], [-39,500 JD], [8,406 JD], [8,730 JD], [8,943 JD], [9,156 JD], [9,269 JD],
+        [*Cumulative NPV*], [-39,500 JD], [-31,094 JD], [-22,364 JD], [-13,421 JD], [-4,265 JD], [5,004 JD],
+        [*Payback Period*], [*4 years+*],[4.6 years],
+    
+    ),
+    caption: [Benefit and Payback Analysis]
+  )
+]
+*Lifetime ROI* = *$(90,000-74,500)/(74,500) =0.208 or 20.8% $*
+
+#h(1cm)*Annual ROI* = *$(20.8%)/5 = 4.16%$*
+
+
+
+=== Schedule Feasibility
+
+#align(center)[
+  #figure(
+  table(
+  columns: 3,align:left,
+[*Phase*], [*Task*],[*Estimated Time*],
+[*Planning*],[Define Project Scope & Objectives],[1 week],
+[*Analysis*],[Requirements Gathering, Process Analysis, \ and Document Delivery],[2 weeks],
+[*Design*],[System Architecture and Interface Design],[2 weeks],
+[*Implementation*],[Development of Core Features],[2 weeks],
+[*Testing*],[System Testing and Quality Assurance],[5 weeks],
+[*Deployment*],[System Deployment ],[1 week],
+)
+, caption: [Project Development Schedule]
+)]
+

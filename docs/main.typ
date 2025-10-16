@@ -26,9 +26,9 @@
   #table(columns: 2,gutter: 2pt, 
     [*Student Name*],[*ID*],
     [Anas AL-Jallad],[0225343],
-    [Orjoan Ali Aldabaibah],[0224933],
-    [Mosa Mohammad Daradkah],[0222634],
-    [Haneen Saqer Falah Alajaleen],[0226320],
+    [Orjoan Aldabaibah],[0224933],
+    [Mosa Daradkah],[0222634],
+    [Haneen Alajaleen],[0226320],
     [Shaima Hasan],[0227646],
 
   )
