@@ -5,8 +5,9 @@
   numbering:"1",
  )
 
-#set text(size: 12pt)
+#set text(size: 12pt,font: "Times New Roman Cyr")
 
+//#set text(size: 12pt,)
 
 #v(4cm)
 #align(center)[
@@ -16,7 +17,7 @@
   #text(size: 16pt)[SALLEHA]
 
   Systems Analysis and Design \
-  Supervised by : Dr. Hamad Alsawalqah \ 
+  Supervised by: Dr.Hamad Alsawalqah \ 
   #let date = datetime(
   year: 2025,
   month: 10,
@@ -62,5 +63,5 @@
 #set par(justify: true,spacing: 2em)
 
 
-#include "chapters/chapter1.typ"
+#include "chapters/chapter1/chapter1.typ"
 

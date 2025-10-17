@@ -51,20 +51,52 @@ diffuculty of managing the reports.
 
 Without a system to hold everything together it require a lot of effort to pull through the maintenance tasks.
 To satisfy users, they need a system to adapt to their needs. Providing a smooth, painless experience
-through an easy to use interface.A system is needed such that it enables feedback submission, tracks administrative responses, and provides data-driven
+through an easy to use interface. A system is needed such that it enables feedback submission, tracks administrative responses, and provides data-driven
 insights for continuous service improvement. Delaying this solution risks further dissatisfaction and
 missed opportunities for institutional growth.
+
 ==== System Capabilities
-+ Ticket submission with images and location info
-+ Role-based dashboards for users, technicians, and administrators
-+ Priority-based task assignment and scheduling
-+ Push/email notifications for status updates
-+ Maintenance history and analytics for equipment and areas
++ Ticket Submission Capabilities. \ #text([
+- Users are able to submit maintenance tickets through a user-friendly interface.
+- Tickets include: \ #text([
+  - Text description of the issue.
+  - Image attachments to provide visual context.
+  - Location tagging to help technicians identify where the issue is.
+])])
+
++ Role-Based Dashboards. \ #text([
+- The system provides separate dashboards based on user roles.
+- Roles include: \ #text([
+  - Users: Can submit and track tickets, view status updates, and provide feedback.
+  - Technicians: Can view assigned tickets, update task statuses, and log maintenance work.
+  - Administrators: Can assign tasks, monitor performance, and access analytics dashboards (restricted access).
+])])
+
++ Task Assignment and Scheduling. \ #text([
+- Administrators can assign tasks to technicians based on priority and availability.
+- System supports: \ #text([
+  - Priority-based task distribution depending on if its urgent or normal. 
+  - Scheduling of tasks to optimize technician workload and response time.
+\ ])])
++ Push and Email Notifications. \ #text([
+- The system provides real time updates on ticket statuses.
+- Notification types include: \ #text([
+  - Push notifications via web or mobile.
+  - Email alerts for important status changes.
+])])
++ Maintenance History and Analytics. \ #text([
+- System keeps a log of all past maintenance activities.
+- Analytics dashboard features: \ #text([
+  - Insights into frequent issues by area or equipment.
+  - Performance tracking for continuous improvement.
+  - Access restricted to administrators only.
+])])
 ==== Business Benefits
--
--
--
--
+- Providing a better quality of life.
+- Overall increase of the user satisfaction.
+- Increasing speed of maintenance tasks.
+- Eliminating delays and lessening risks.
+- Providing better communication channels.
 == Feasbility Studies
 === Techinical Feasibility
 The technical feasibility assesses the technological components necessary 
@@ -89,7 +121,7 @@ We expected that our system will gain a wide acceptance from users, admins
 And technicians because it solves a very needed problem and saves time and effort.
 It will have clear privacy guidelines and mechanisms to ensure that our users will be secured.      
 it complies with the policies set by the country's laws and Institutions.
-#pagebreak()
+
 === Economic Feasibility
 *Development Costs:*   
 #align(center)[
