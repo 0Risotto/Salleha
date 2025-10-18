@@ -11,6 +11,7 @@ The structure for our team also supports good communication between team members
 
 #figure(
   table(columns: 2,
+
     [*Assigned Member*], [*Roles*],
     [*Anas*],[Project Manager, System Analyst, Requirement Analyst],
     [*Orjoan*],[Technical Clerk, Technician],

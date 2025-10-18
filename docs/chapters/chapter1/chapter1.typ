@@ -20,6 +20,8 @@ This often creates a communication  gap between users and the authorities respon
 #let issue3 = text([Users rarely receive updates on the status of their maintenance requests. This lack of visibility creates frustration and reduces trust in the system, while maintenance teams struggle to keep everyone informed. ])
 #let issue4 = text([Users lack Privacy through and through with traditional reporting methods, this can lead to an upset and distrust to some people. Users care for their own privacy hence why some reports have never been sent before because of their own worry about the system.  ])
 #table(stroke: none,columns: 2,
+      fill: white  ,
+
         [*Issue*],[*weight*],
         [#issue1],[10],
         [#issue2],[9],
@@ -134,6 +136,7 @@ it complies with the policies set by the country's laws and Institutions.
 #align(center)[
   #figure(
   table(
+
   columns: 2,align:left,
 [*Expense Category*], [*Amount*],
 [Salaries],[20,000 JD],

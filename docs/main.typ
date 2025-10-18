@@ -6,7 +6,7 @@
  )
 
 #set text(size: 12pt,font: "Times New Roman Cyr")
-
+#set table(fill: (coloum, row) => if  row == 0  { rgb(126, 166, 224)} else if coloum == 0  { rgb(189,193,201) },)
 //#set text(size: 12pt,)
 
 #v(4cm)
