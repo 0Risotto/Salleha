@@ -1,7 +1,7 @@
 = Project initiation 
 == Project Overview
 
-Salleha is a platform designed for managing maintenance requests in 
+SALLEHA is a platform designed for managing maintenance requests in 
 facilities like offices or residential buildings, making maintenance and 
 reporting more efficient and easier. Users can report issues, track progress, 
 and get updates. Admins and technicians can assign, prioritize, and resolve
@@ -112,6 +112,13 @@ making the website easy for Seniors users to understand and use .
 
 Cloud Hosting: We are using GitHub to store and manage the project online. 
 It helps us work together, keep track of changes, and easily share the project with others.
+
+Since all these technologies are part of what we have learned at university and
+practiced in various projects,
+we are fully capable of developing
+and maintaining the SALLEHA platform
+using them. Our academic background
+and hands-on experience give us the technical foundation and confidence to build this system successfully.
 === Operational Feasibility
 The proposed web and mobile application is operationally feasible, it
 designed to get maintenance requests in facilities like universities,offices, or residential buildings, enabling the users to report issues, track 

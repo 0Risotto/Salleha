@@ -59,9 +59,14 @@
   target: figure.where(kind: table),
 )
 #pagebreak()
+#outline(
+  title: [Figures],
+  target: figure.where(kind: image),
+)
+#pagebreak()
 
 #set par(justify: true,spacing: 2em)
 
 
 #include "chapters/chapter1/chapter1.typ"
-
+#include "chapters/chapter2/chapter2.typ"
