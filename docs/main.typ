@@ -49,7 +49,7 @@
 #pagebreak()
 
 
-#set heading(numbering: "1.")
+#set heading(numbering: "1.", )
 #outline()
 
 
