@@ -210,8 +210,8 @@ it complies with the policies set by the country's laws and Institutions.
 [*Planning*],[Define Project Scope & Objectives],[1 week],
 [*Analysis*],[Requirements Gathering, Process Analysis, \ and Document Delivery],[2 weeks],
 [*Design*],[System Architecture and Interface Design],[2 weeks],
-[*Implementation*],[Development of Core Features],[2 weeks],
-[*Testing*],[System Testing and Quality Assurance],[5 weeks],
+[*Implementation*],[Development of Core Features],[4 weeks],
+[*Testing*],[System Testing and Quality Assurance],[2 weeks],
 [*Deployment*],[System Deployment ],[1 week],
 )
 , caption: [Project Development Schedule]
