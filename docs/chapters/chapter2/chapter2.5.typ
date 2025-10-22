@@ -1,18 +1,19 @@
 #show figure: set columns(7)
 #show figure: set block(breakable: true)
+#show figure: set align(left)
+#show figure: set par(justify: false)
 
 //headers
-#let header1 = ([*Phase*], [*Task*], [*Detailed task*], [*EstimatedTime*])
-#let header2 = ([], [*Resources Needed*], [*Dependencies and Constraints*], [*Deliverables & Milestones*])
-\
+#let header1 = (table.cell(fill: rgb(126, 166, 224) )[*Phase*], table.cell(fill: rgb(126, 166, 224))[*Task*], table.cell(fill: rgb(126, 166, 224))[*Detailed task*], table.cell(fill: rgb(126, 166, 224))[*EstimatedTime*])
+#let header2 = (table.cell()[],table.cell(fill: rgb("#92c0e6d0"))[*Resources Needed*], table.cell(fill: rgb("#92c0e6d0"))[*Dependencies and Constraints*], table.cell(fill: rgb("#92c0e6d0"))[*Deliverables & Milestones*])
+
+#let a = table.cell(colspan: 4, inset: 0pt)[]
 #figure(
 table(columns: 4,
   ..header1,
 
 
-  fill: (_, y) =>
-    if calc.even(y) {rgb(126, 166, 224) }
-    else { rgb(189,193,201) },
+
   list(
     [Resource & Schedule Planning (T1)],
     [Requirements Gathering (T2)],
@@ -32,7 +33,7 @@ table(columns: 4,
 
   
   ..header2,
-  [],[],[],[],
+ 
   ..header1,
   [Analysis],
   list(
@@ -56,8 +57,7 @@ table(columns: 4,
   [2 weeks],
 
   ..header2,
-  [],[],[],[],
-
+  
   ..header1,
   [Design],
   list(
@@ -81,8 +81,7 @@ table(columns: 4,
   [2 weeks],
 
   ..header2,
-  [],[],[],[],
-
+  
   ..header1,
   [Development],
   list(
@@ -111,7 +110,6 @@ table(columns: 4,
   [4 weeks],
 
   ..header2,
-  [],[],[],[],
 
   ..header1,
   [Testing],
@@ -139,7 +137,7 @@ table(columns: 4,
   [2 weeks],
 
   ..header2,
-  [],[],[],[],
+  
 
   ..header1,
   [Deployment],
