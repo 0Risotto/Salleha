@@ -1,8 +1,10 @@
+
+== Project tasks
+
 #show figure: set columns(7)
 #show figure: set block(breakable: true)
 #show figure: set align(left)
 #show figure: set par(justify: false)
-
 //headers
 #let header1 = (table.cell(fill: rgb(126, 166, 224) )[*Phase*], table.cell(fill: rgb(126, 166, 224))[*Task*], table.cell(fill: rgb(126, 166, 224))[*Detailed task*], table.cell(fill: rgb(126, 166, 224))[*EstimatedTime*])
 #let header2 = (table.cell()[],table.cell(fill: rgb("#92c0e6d0"))[*Resources Needed*], table.cell(fill: rgb("#92c0e6d0"))[*Dependencies and Constraints*], table.cell(fill: rgb("#92c0e6d0"))[*Deliverables & Milestones*])
