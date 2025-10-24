@@ -36,7 +36,67 @@ table(columns: 4,
   
   ..header2,
  
+ list(
+  []
+),
+list(
+  [ *Skills*
+
+• A project leader to coordinate meetings, and define a schedule
+
+• A team work with technical and technology skills
+
+*Hardware*
+
+• Team members laptops for development and documentation
+
+• A Shared test device for quick mobile and web checks
+
+*Software*
+
+• GitHub is used to store both the Typst documentation files and the platform’s source code
+
+• Draw.io for diagrams and Figma for design
+
+• Typst for documentation
+
+• Risk register template, and a simple quality checklist template
+
+• Google Sheets for schedule and resource tables and the risk register
+]
+),
+list(
+  [ *Dependencies*
+
+• Approved project charter
+
+• Availability of key stakeholders for interviews such as the requesters and the facility managers
+
+*Constraints*
+
+• To complete this phase in 1 week
+
+• The availability of stakeholders, so that the approvals amd reviews will not be delayed
+
+• Legacy constraints
+
+• Budget constraints
+]
+),
+list(
+  [ *Deliverables*
+
+• Work breakdown structure diagram
+
+• Table with risk, impact, probability, priority, and mitigation
+
+• Quality standards document (acceptance criteria checklist)
+
+]
+),
   ..header1,
+
+  
   [Analysis],
   list(
     [Requirements Elicitation (T3)],
@@ -60,6 +120,76 @@ table(columns: 4,
 
   ..header2,
   
+  list(
+  []
+),
+list(
+  [*Skills*
+
+• Business Analyst to lead stakeholder interviews and surveys
+
+• Designers to create wireframes and prototypes for the React web and the Flutter mobile.
+
+• DB Designer to build ERDs and map entities to DB structure
+
+• Developers
+
+• Project manager to be responsible for the overall execution of the project
+
+• Quality assurance specialists
+
+*Hardware*
+
+• Team laptops
+
+*Software*
+
+• Elicitation tools: Google Forms for surveys, Google Meet for interviews, and audio notes. 
+
+• Draw.io for diagrams, MySQL Workbench, and a UML tool for use-case diagrams. 
+
+• Figma for early UI/UX validation by creating wireframes and low-fidelity prototypes
+
+• GitHub for collaboration and tracking
+
+• Requirements traceability matrix spreadsheet
+]
+),
+list(
+  [*Dependencies*
+
+• Stakeholder availability
+
+• Access to collaboration tools so the informations can be shared and reviewed.
+
+*Constraints*
+
+• 2 weeks for full elicitation, modeling and validation.
+
+• Stakeholder time; limited availability may restrict depth of interviews
+
+• Data privacy when handaling the facility data
+]
+),
+list(
+  [*Deliverables*
+
+• Software Requirements Specification
+
+• Use-case diagrams for the main maintenance workflows 
+
+• Entity-Relationship Diagram
+
+• Wireframes
+
+• Survey results and interview notes 
+
+• Non-functional requirements list 
+
+• Requirements validation report
+
+• Requirements Traceability Matrix]
+),
   ..header1,
   [Design],
   list(
@@ -84,6 +214,72 @@ table(columns: 4,
 
   ..header2,
   
+  list(
+  []
+),
+list(
+  [*Skills*
+
+• Software Architect experienced in web and mobile systems
+
+• UI/UX Designer
+
+• Backend Developer
+
+• Frontend Developers (React and Flutter)
+
+• Database Engineer for schema and constraints
+
+• QA Engineer 
+
+*Hardware*
+
+• Developer laptops and PCs
+
+• Cloud  host for test servers 
+
+*Software*
+
+• Visual Studio Code, Android Studio
+
+• Draw.io and Figma for diagrams and UI design
+
+• GitHub for version control
+
+• Database tools (MySQL Workbench)
+
+• Communication tools 
+]
+),
+list(
+  [*Dependencies*
+
+• Completion and approval of Software Requirements Specification 
+
+• UI design depends on confirmed user workflows and functional requirements because they show what the user needs to do and how the system should respond 
+
+*Constraints*
+
+• Limited by team availability
+
+• Design must comply with quality standards and security requirements
+
+• Time constraint: 2 weeks 
+
+]
+),
+list(
+  [*Deliverables*
+
+• Web and Mobile System Architecture Document 
+
+• High-Level Design including  system modules and interaction diagrams
+
+• Detailed Design including Class diagrams, Sequence diagrams, Database schema and API documentation
+
+• UI/UX prototypes for web and mobile
+]
+),
   ..header1,
   [Development],
   list(
@@ -113,6 +309,75 @@ table(columns: 4,
 
   ..header2,
 
+list(
+  []
+),
+list(
+  [ *Skills*
+
+• Frontend Developers (React for web, and Flutter for mobile)
+
+• Backend Developer (we will use Node.js)
+
+• Database Engineer (MySQL)
+
+• DevOps Engineer for setup 
+
+• QA Engineer for unit and integration testing
+
+*Hardware*
+
+• Developer PCS and laptops
+
+• Android and iOS testing devices or emulators
+
+• Server environment 
+
+*Software*
+
+• Visual Studio Code, Android Studio, and Xcode for Flutter
+
+• Node.js, npm, Flutter SDK, Git
+
+• Database tools (MySQL Workbench)
+
+• Postman for API testing
+
+• GitHub for repository hosting and version control
+
+• GitHub as an integration tool for both our documentation (created using Typst) and the project code
+]
+),
+list(
+  [*Dependencies*
+
+• Depends on approved design phase deliverables auch as architecture, and database schema
+
+*Constraints*
+
+• We must follow the coding standards, security rules, and framework versions that were set in the earlier phases
+
+• The work is limited by team availability and the performance of devices or emulators used for development
+
+• The time limit is 4 weeks; any delays may affect the testing and deployment phases
+
+• Internet or cloud service interruptions may slow down integration and testing activities
+
+]
+),
+list(
+  [*Deliverables*
+
+• Git repository 
+
+• Working web and mobile front-end modules (React and Flutter)
+
+• Implemented database schema 
+
+• Unit testing and integration tests
+]
+),
+
   ..header1,
   [Testing],
   list(
@@ -140,6 +405,48 @@ table(columns: 4,
 
   ..header2,
   
+list(
+  []
+),
+list(
+  [*Skills*
+
+• QA engineers skilled in web and mobile testing, test automation, and bug tracking
+
+ *Hardware*
+
+• Test devices (Android and iOS)
+
+ *Software*
+
+Postman for API testing, and JMeter for performance testing
+
+]
+),
+list(
+  [*Dependencies*
+
+• It is dependent on completion of the Development Phase and availability of a stable build.
+
+• Test data and environment setup depends on finalized database
+
+*Constraints*
+
+• Limited time for testing may constrain full regression coverage
+
+• Must follow project’s quality assurance and version control procedures
+
+]
+),
+list(
+  [*Deliverables*
+
+• Completed integration and system test reports
+
+• Signed-off User Acceptance Test report from stakeholders to be ready for deployment 
+
+]
+),
 
   ..header1,
   [Deployment],
@@ -169,8 +476,64 @@ table(columns: 4,
     [Document lessons learned and improvement areas],
   ),
   [1 weeks],
-  
+
   ..header2,
-  [],[],[],[],
+  list(
+  []
+  ),
+  list(
+  [*Skills*
+
+• DevOps engineer
+
+• System administrator
+
+• Database administrator
+
+• Technical support specialist.
+
+*Software*
+
+• GitHub Actions
+
+• Google Cloud (hosting)
+
+• Firebase (mobile integration)
+
+• Google Analytics as a monitoring tool
+
+*Hardware*
+
+• Cloud servers
+
+• Mobile and desktop devices
+]
+  ),
+  list(
+  [*Dependencies*
+
+• Dependent on successful completion of testing 
+
+*Constraints*
+
+• It must be scheduled 
+
+• Risk of configuration errors 
+
+• Security and data compliance must be checked and confirmed before the system goes live
+
+]
+  ),
+  list(
+  [*Deliverables*
+
+• Successfully deployed web and mobile applications
+
+• User training and support materials completed
+
+• Documented post-deployment review and lessons learned
+]
+  ),
+
 
 ))
