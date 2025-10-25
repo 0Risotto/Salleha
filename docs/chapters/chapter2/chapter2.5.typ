@@ -412,7 +412,7 @@ list(
 
 • M4.1: Development environment configured and repository initialized.
 
-• M4.2: Functional prototype implemented.
+• M4.2: Initial Functional prototype completed.
 
 • M4.3: Unit and integration testing completed with 80% code coverage.
 
