@@ -76,7 +76,7 @@ list(
 
 • To complete this phase in 1 week
 
-• The availability of stakeholders, so that the approvals amd reviews will not be delayed
+• The availability of stakeholders, so that the approvals and reviews will not be delayed
 
 • Legacy constraints
 
@@ -92,6 +92,15 @@ list(
 
 • Quality standards document (acceptance criteria checklist)
 
+*Milestones*
+
+• M1.1: Charter Approved and communicated to the team.
+
+• M1.2: Work Breakdown Structure completed and reviewed by all members. 
+
+• M1.3: Resource plan and schedule baseline approved.
+
+• M1.4: Risk register and quality standards finalized.
 ]
 ),
   ..header1,
@@ -188,7 +197,19 @@ list(
 
 • Requirements validation report
 
-• Requirements Traceability Matrix]
+• Requirements Traceability Matrix
+
+*Milestones*
+
+• M2.1: Complete stakeholder interviews, surveys, and observations.
+
+• M2.2: Draft Software Requirements Specification (SRS) prepared.
+
+• M2.3: Software Requirements Specification (SRS) reviewed and approved by stakeholders.
+
+• M2.4: Requirements validation and traceability matrix completed.
+
+]
 ),
   ..header1,
   [Design],
@@ -278,6 +299,17 @@ list(
 • Detailed Design including Class diagrams, Sequence diagrams, Database schema and API documentation
 
 • UI/UX prototypes for web and mobile
+
+*Milestones*
+
+• M3.1: System architecture approved.
+
+• M3.2: High-level and detailed design documents completed.
+
+• M3.3: UI/UX prototypes finalized and validated with stakeholders.
+
+• M3.4: Design reviewed and approved by all stakeholders.
+
 ]
 ),
   ..header1,
@@ -375,6 +407,19 @@ list(
 • Implemented database schema 
 
 • Unit testing and integration tests
+
+* Milestones*
+
+• M4.1: Development environment configured and repository initialized.
+
+• M4.2: Functional prototype implemented.
+
+• M4.3: Unit and integration testing completed with 80% code coverage.
+
+• M4.4: Quality assurance (QA) verification passed and build approved for testing.
+
+• M4.5: Production environment prepared and ready for deployment.
+
 ]
 ),
 
@@ -444,6 +489,16 @@ list(
 • Completed integration and system test reports
 
 • Signed-off User Acceptance Test report from stakeholders to be ready for deployment 
+
+*Milestones*
+
+• M5.1: Test plan and test cases developed and approved.
+
+• M5.2: System and integration tests executed successfully.
+
+• M5.3: User Acceptance Testing (UAT) completed and approved.
+
+• M5.4: Exit criteria met and testing phase formally closed.
 
 ]
 ),
@@ -532,6 +587,19 @@ list(
 • User training and support materials completed
 
 • Documented post-deployment review and lessons learned
+
+*Milestones*
+
+• M6.1: Final stakeholder approval for production release obtained.
+
+• M6.2: Web and mobile applications deployed to production environment.
+
+• M6.3: User training sessions completed.
+
+• M6.4: Post-deployment review completed.
+
+• M6.5: Project officially closed.
+
 ]
   ),
 
