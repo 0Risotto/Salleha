@@ -43,12 +43,12 @@ list(
   [ *Skills*
 - A project leader to coordinate meetings, and define a schedule
 - A team work with technical and technology skills
-
-*Hardware*
+  ],
+[*Hardware*
 - Team members laptops for development and documentation
 - A Shared test device for quick mobile and web checks
-
-*Software*
+  ],
+[*Software*
 - GitHub is used to store both the Typst documentation files and the platform’s source code
 - Draw.io for diagrams and Figma for design
 - Typst for documentation
@@ -60,8 +60,8 @@ list(
   [ *Dependencies*
 - Approved project charter
 - Availability of key stakeholders for interviews such as the requesters and the facility managers
-
-*Constraints*
+  ],
+  [*Constraints*
 - To complete this phase in 1 week
 - The availability of stakeholders, so that the approvals and reviews will not be delayed
 - Legacy constraints
@@ -73,7 +73,7 @@ list(
 - Work breakdown structure diagram
 - Table with risk, impact, probability, priority, and mitigation
 - Quality standards document (acceptance criteria checklist)
-
+  ],[
 *Milestones*
 - M1.1: Charter Approved and communicated to the team.
 - M1.2: Work Breakdown Structure completed and reviewed by all members. 
@@ -118,12 +118,11 @@ list(
 - Developers
 - Project manager to be responsible for the overall execution of the project
 - Quality assurance specialists
-
-*Hardware*
+    ],
+[*Hardware*
 - Team laptops
-
-*Software*
-
+    ]
+,[*Software*
 - Elicitation tools: Google Forms for surveys, Google Meet for interviews, and audio notes. 
 - Draw.io for diagrams, MySQL Workbench, and a UML tool for use-case diagrams. 
 - Figma for early UI/UX validation by creating wireframes and low-fidelity prototypes
@@ -133,14 +132,13 @@ list(
 ),
 list(
   [*Dependencies*
-- Stakeholder availability
-- Access to collaboration tools so the informations can be shared and reviewed.
-
-*Constraints*
-- 2 weeks for full elicitation, modeling and validation.
--  Stakeholder time; limited availability may restrict depth of interviews
-- Data privacy when handaling the facility data
-
+  - Stakeholder availability
+  - Access to collaboration tools so the informations can be shared and reviewed.
+],
+  [*Constraints*
+  - 2 weeks for full elicitation, modeling and validation.
+  - Stakeholder time; limited availability may restrict depth of interviews
+  - Data privacy when handaling the facility data
 ]
 ),
 list(
@@ -153,9 +151,8 @@ list(
 - Non-functional requirements list 
 - Requirements validation report
 - Requirements Traceability Matrix
-
-*Milestones*
-
+  ],
+[*Milestones*
 - M2.1: Complete stakeholder interviews, surveys, and observations.
 - M2.2: Draft Software Requirements Specification (SRS) prepared.
 - M2.3: Software Requirements Specification (SRS) reviewed and approved by stakeholders.
@@ -198,12 +195,12 @@ list(
 - Frontend Developers (React and Flutter)
 - Database Engineer for schema and constraints
 - QA Engineer 
-
-*Hardware*
+    ],
+[*Hardware*
 - Developer laptops and PCs
 - Cloud  host for test servers 
-
-*Software*
+    ],
+[*Software*
 - Visual Studio Code, Android Studio
 - Draw.io and Figma for diagrams and UI design
 - GitHub for version control
@@ -213,29 +210,31 @@ list(
 ),
 list(
   [*Dependencies*
+
 - Completion and approval of Software Requirements Specification 
 - UI design depends on confirmed user workflows and functional requirements because they show what the user needs to do and how the system should respond 
+      ],
+[*Constraints*
 
-*Constraints*
 - Limited by team availability
 - Design must comply with quality standards and security requirements
 - Time constraint: 2 weeks 
-
 ]
 ),
 list(
   [*Deliverables*
+
 - Web and Mobile System Architecture Document 
 - High-Level Design including  system modules and interaction diagrams
 - Detailed Design including Class diagrams, Sequence diagrams, Database schema and API documentation
 - UI/UX prototypes for web and mobile
+      ],
+[*Milestones*
 
-*Milestones*
 - M3.1: System architecture approved.
 - M3.2: High-level and detailed design documents completed.
 - M3.3: UI/UX prototypes finalized and validated with stakeholders.
 - M3.4: Design reviewed and approved by all stakeholders.
-
 ]
 ),
   ..header1,
@@ -271,80 +270,50 @@ list(
 ,
 list(
   [ *Skills*
-
 - Frontend Developers (React for web, and Flutter for mobile)
-
 - Backend Developer (we will use Node.js)
-
 - Database Engineer (MySQL)
-
 - DevOps Engineer for setup 
-
-- QA Engineer for unit and integration testing
-
-*Hardware*
-
+- QA Engineer for unit and integration testing 
+      ],
+      [ *Hardware*
 - Developer PCS and laptops
-
 - Android and iOS testing devices or emulators
-
 - Server environment 
-
+    ],[
 *Software*
-
 - Visual Studio Code, Android Studio, and Xcode for Flutter
-
 - Node.js, npm, Flutter SDK, Git
-
 - Database tools (MySQL Workbench)
-
 - Postman for API testing
-
 - GitHub for repository hosting and version control
-
 - GitHub as an integration tool for both our documentation (created using Typst) and the project code
 ]
 ),
 list(
   [*Dependencies*
-
 - Depends on approved design phase deliverables auch as architecture, and database schema
-
-*Constraints*
-
+  ],
+[*Constraints*
 - We must follow the coding standards, security rules, and framework versions that were set in the earlier phases
-
 - The work is limited by team availability and the performance of devices or emulators used for development
-
 - The time limit is 4 weeks; any delays may affect the testing and deployment phases
-
 - Internet or cloud service interruptions may slow down integration and testing activities
-
 ]
 ),
 list(
   [*Deliverables*
-
 - Git repository 
-
 - Working web and mobile front-end modules (React and Flutter)
-
 - Implemented database schema 
-
 - Unit testing and integration tests
-
+  ],[
 * Milestones*
-
 - M4.1: Development environment configured and repository initialized.
-
 - M4.2: Initial Functional prototype completed.
-
 - M4.3: Unit and integration testing completed with 80% code coverage.
-
 - M4.4: Quality assurance (QA) verification passed and build approved for testing.
-
 - M4.5: Production environment prepared and ready for deployment.
-
 ]
 ),
 
@@ -378,49 +347,33 @@ list(
   [],
 list(
   [*Skills*
-
-- QA engineers skilled in web and mobile testing, test automation, and bug tracking
-
- *Hardware*
-
-- Test devices (Android and iOS)
-
+  - QA engineers skilled in web and mobile testing, test automation, and bug tracking
+    ],
+  [*Hardware*
+  - Test devices (Android and iOS)],
+  [
  *Software*
-
-Postman for API testing, and JMeter for performance testing
-
+- Postman for API testing, and JMeter for performance testing
 ]
 ),
 list(
   [*Dependencies*
-
 - It is dependent on completion of the Development Phase and availability of a stable build.
-
 - Test data and environment setup depends on finalized database
-
-*Constraints*
-
+  ],
+  [*Constraints*
 - Limited time for testing may constrain full regression coverage
-
 - Must follow project’s quality assurance and version control procedures
-
 ]
 ),
 list(
   [*Deliverables*
-
 - Completed integration and system test reports
-
 - Signed-off User Acceptance Test report from stakeholders to be ready for deployment 
-
-*Milestones*
-
+  ],[*Milestones*
 - M5.1: Test plan and test cases developed and approved.
-
 - M5.2: System and integration tests executed successfully.
-
 - M5.3: User Acceptance Testing (UAT) completed and approved.
-
 - M5.4: Exit criteria met and testing phase formally closed.
 
 ]
@@ -460,68 +413,44 @@ list(
   ,
   list(
   [*Skills*
-
 - DevOps engineer
-
 - System administrator
-
 - Database administrator
-
 - Technical support specialist.
-
-*Software*
-
+    ],
+ [*Software*
 - GitHub Actions
-
 - Google Cloud (hosting)
-
 - Firebase (mobile integration)
-
 - Google Analytics as a monitoring tool
-
-*Hardware*
-
+  ],
+[*Hardware*
 - Cloud servers
-
 - Mobile and desktop devices
 ]
   ),
   list(
   [*Dependencies*
-
 - Dependent on successful completion of testing 
-
+  ],[
 *Constraints*
-
 - It must be scheduled 
-
 - Risk of configuration errors 
-
 - Security and data compliance must be checked and confirmed before the system goes live
-
 ]
   ),
   list(
   [*Deliverables*
-
 - Successfully deployed web and mobile applications
-
 - User training and support materials completed
-
 - Documented post-deployment review and lessons learned
-
+],[
 *Milestones*
-
 - M6.1: Final stakeholder approval for production release obtained.
-
 - M6.2: Web and mobile applications deployed to production environment.
-
 - M6.3: User training sessions completed.
-
 - M6.4: Post-deployment review completed.
-
 - M6.5: Project officially closed.
-
 ]
   ),
 
