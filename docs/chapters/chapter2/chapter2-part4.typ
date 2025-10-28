@@ -1,5 +1,5 @@
 #figure(
-  image("../../assets/chapter2/GanttChart.png")
+  image("../../assets/chapter2/ganttChart.png")
   ,caption: [Gantt Chart]
 )
 
