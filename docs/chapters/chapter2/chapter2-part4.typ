@@ -4,6 +4,6 @@
 )
 
 #figure(
-  image("../../assets/chapter2/activityNetworkDiagram.PNG")
+  image("../../assets/chapter2/activityNetworkDiagram.png")
   ,caption: [Activity Network Diagram]
 )
