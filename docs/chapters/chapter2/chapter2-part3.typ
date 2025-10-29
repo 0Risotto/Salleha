@@ -320,10 +320,10 @@ list(
   ..header1,
   [Testing],
   list(
-    [Test Planning (T16)],
-    [Integration Testing (T17)],
-    [System & Acceptance Testing (T18)],
-    [Regression & Release Testing (T19)],
+    [Test Planning (T14)],
+    [Integration Testing (T15)],
+    [System & Acceptance Testing (T16)],
+    [Regression & Release Testing (T17)],
   ),
 
   list(
@@ -382,11 +382,11 @@ list(
   ..header1,
   [Deployment],
   list(
-    [Release Planning (T20)],
-    [Environment Provisioning (T21)],
-    [Go-Live Execution (T22)],
-    [Transition & Support (T23)],
-    [Post-Deployment Review (T24)],
+    [Release Planning (T18)],
+    [Environment Provisioning (T19)],
+    [Go-Live Execution (T20)],
+    [Transition & Support (T21)],
+    [Post-Deployment Review (T22)],
   ),
 
   list(
