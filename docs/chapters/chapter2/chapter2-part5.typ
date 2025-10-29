@@ -26,11 +26,10 @@
       [T17], [Software QA Engineer (External), Software Engineer ( Haneen & Shaima)],
       [T18], [Software QA Engineer (External), System Analyst (Anas )],
       [T19], [Software QA Engineer (External)],
-      [T20], [System Administrator ( Mosa ), Project Manager (Anas ), Software Engineer ()],
+      [T20], [System Administrator ( Mosa ), Project Manager (Anas ), Software Engineer (Haneen & Shaima)],
       [T21], [System Administrator ( Mosa ), Database Engineer ( Mosa)],
-      [T22], [System Administrator ( Mosa ), Software Engineer (Haneen & Shaima), InfoSec Engineer (Ext.)],
-      [T23], [System Administrator (Mosa  ), Information Security Engineer (External)],
-      [T24], [Project Manager ( Anas), All Key Roles]
+      [T22], [System Administrator ( Mosa ), Software Engineer (Haneen & Shaima), InfoSec Engineer (Ext.)]
+     
     ),
     caption: [Task-to-Team Member Assignment]
   )
@@ -54,7 +53,8 @@
       [Planning], [4,000 JD], [4,000 JD], [2 weeks], [80%], [1,000 JD], [1,000 JD],
       [Analysis], [6,500 JD], [10,500 JD], [2 weeks], [0%], [Not yet begun], [Not yet begun],
       [Design], [8,000 JD], [18,500 JD], [2 weeks], [0%], [Not yet begun], [Not yet begun],
-      [Implementation ], [16,000 JD], [34,500 JD], [4 weeks], [0%], [Not yet begun], [Not yet begun],
+      [Implem
+      entation ], [16,000 JD], [34,500 JD], [4 weeks], [0%], [Not yet begun], [Not yet begun],
       [Testing], [8,000 JD], [42,500 JD], [2 weeks], [0%], [Not yet begun], [Not yet begun],
       [Deployment], [5,000 JD], [47,500 JD], [1 week], [0%], [Not yet begun], [Not yet begun]
     ),
@@ -110,35 +110,33 @@ Based on information we gained from EVM analysis, we have to expedite our schedu
       columns: 4,
       align: left,
       [*Activity*], [*Estimated duration (days)*], [*Crash time (days)*], [*Cost/day (JD)*],
-      [T1], [3], [1], [200],
-      [T2], [2], [2], [200],
-      [T3], [4], [2], [300],
-      [T4], [3.5], [2], [400],
-      [T5], [2.5], [1.5], [300],
-      [T6], [1], [1], [300],
-      [T7], [2], [2], [300],
+      [T1], [5], [1], [200],
+      [T2], [4], [2], [200],
+      [T3], [3], [2], [300],
+      [T4], [5], [2], [400],
+      [T5], [2], [1.5], [300],
+      [T6], [5], [1], [300],
+      [T7], [5], [2], [300],
       [T8], [4], [3], [300],
-      [T9], [3], [2], [300],
-      [T10], [4], [2], [250],
-      [T11], [11], [9], [250],
-      [T12], [11], [10], [400],
-      [T13], [11], [10], [400],
-      [T14], [4], [2], [250],
-      [T15], [2], [2], [250],
-      [T16], [3], [3], [300],
-      [T17], [2], [2], [300],
-      [T18], [2.2], [2], [300],
-      [T19], [3], [2], [250],
-      [T20], [0.75], [0.75], [250],
-      [T21], [1.25], [1.25], [250],
-      [T22], [1.5], [1.5], [300],
-      [T23], [1.25], [1.25], [300],
-      [T24], [0.75], [0.75], [300]
+      [T9], [4], [2], [300],
+      [T10], [5], [2], [250],
+      [T11], [20], [9], [250],
+      [T12], [20], [10], [400],
+      [T13], [10], [18], [400],
+      [T14], [3], [2], [250],
+      [T15], [4], [2], [250],
+      [T16], [4], [3], [300],
+      [T17], [3], [2], [300],
+      [T18], [1], [0.75], [300],
+      [T19], [1], [0.75], [250],
+      [T20], [1], [0.75], [250],
+      [T21], [2], [1.25], [250],
+      [T22], [2], [1.5], [300]
+   
     ),
     caption: [ Time and Cost Options ]
   )
 ]
-
 
 
 
@@ -148,16 +146,17 @@ Based on information we gained from EVM analysis, we have to expedite our schedu
       columns: 5,
       align: center,
       [*Activity chosen*], [*Expediting time (days)*], [*Cumulative time saved*], [*Cost (JD)*], [*Cumulative cost (JD)*],
-      [T1], [2], [2], [400], [400],
-      [T10], [2], [4], [600], [900],
-      [T14], [1.5], [5.5], [600], [1400],
-      [T19], [1], [6.5], [300], [1650],
-      [T5], [1], [7.5], [300], [1950],
-      [T9], [1], [8.5], [300], [2250],
-      [T8], [2], [10.5], [500], [2550],
-      [T4], [2], [12.5], [500], [2950],
-     
+      [T1],  [4],   [4],    [800],     [800],
+      [T10], [3],   [7],    [750],     [1550],
+      [T14], [1],   [8],    [250],     [1800],
+      [T19], [0.25],[8.25], [62.5],    [1862.5],
+      [T5],  [0.5], [8.75], [150],     [2012.5],
+      [T9],  [2],   [10.75],[600],     [2612.5],
+      [T8],  [1],   [11.75],[300],     [2912.5],
+      [T4],  [3],   [14.75],[1200],    [4112.5]
     ),
-    caption: [Implemented Schedule Acceleration Plan]
+    caption: [Implemented Schedule Acceleration Plan (Based on Selected Activities)]
   )
 ]
+
+
