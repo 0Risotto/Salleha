@@ -65,41 +65,41 @@
 
 #strong[P = 80%]
 
-**#strong[Planned Value (PV)]** = 4,000 JD
+#strong[Planned Value (PV)] = 4,000 JD
     
-**#strong[Actual Cost (AC)]** = 1,000 JD
+#strong[Actual Cost (AC)] = 1,000 JD
 
-**#strong[Earned Value (EV)]** = 3,200 JD
+#strong[Earned Value (EV)] = 3,200 JD
 #linebreak()
 #linebreak()
 
-**#strong[Cost Variance (CV)]** = 2,200 JD
+#strong[Cost Variance (CV)] = 2,200 JD
 
- --**We have saved 2,200 JD on the planning phase
+ --We have saved 2,200 JD on the planning phase
 #linebreak()#linebreak()
 
 
-**#strong[Schedule Variance (SV)]** = \(-800\) JD
+#strong[Schedule Variance (SV)] = \(-800\) JD
 
---* *This indicates delayed progress in the planning phase.
+--This indicates delayed progress in the planning phase.
 #linebreak()#linebreak()
 
 
-**#strong[Cost Performance Index (CPI)]** = \(3.2\)
+#strong[Cost Performance Index (CPI)]= \(3.2\)
 
---* *We are under budget. The team is spending less than planned to accomplish the work.
+--We are under budget. The team is spending less than planned to accomplish the work.
 #linebreak()#linebreak()
 
 
-**#strong[Schedule Performance Index (SPI)]** = \(0.8\)
+#strong[Schedule Performance Index (SPI)] = \(0.8\)
 
 --* *We are behind schedule. The progress is slower than expected.
 #linebreak()#linebreak()
 
 
-**#strong[Estimate to Complete (ETC)]** = \(13,593.75\) JD
+#strong[Estimate to Complete (ETC)] = \(13,593.75\) JD
 #linebreak()#linebreak()
-**#strong[Estimate at Completion (EAC)]** = 14843.75 JD
+#strong[Estimate at Completion (EAC)] = 14843.75 JD
 
 
 #pagebreak()
@@ -148,14 +148,14 @@ Based on information we gained from EVM analysis, we have to expedite our schedu
       columns: 5,
       align: center,
       [*Activity chosen*], [*Expediting time (days)*], [*Cumulative time saved*], [*Cost (JD)*], [*Cumulative cost (JD)*],
-      [T1], [2], [2], [400], [],
-      [T10], [2], [4], [600], [],
-      [T14], [1.5], [5.5], [600], [],
-      [T19], [1], [6.5], [300], [],
-      [T5], [1], [7.5], [300], [],
-      [T9], [1], [8.5], [300], [],
-      [T8], [2], [10.5], [500], [],
-      [T4], [2], [12.5], [500], [],
+      [T1], [2], [2], [400], [400],
+      [T10], [2], [4], [600], [900],
+      [T14], [1.5], [5.5], [600], [1400],
+      [T19], [1], [6.5], [300], [1650],
+      [T5], [1], [7.5], [300], [1950],
+      [T9], [1], [8.5], [300], [2250],
+      [T8], [2], [10.5], [500], [2550],
+      [T4], [2], [12.5], [500], [2950],
      
     ),
     caption: [Implemented Schedule Acceleration Plan]

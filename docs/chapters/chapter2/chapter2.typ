@@ -3,4 +3,5 @@
 = Project Management plan
 #include "chapter2-part1.typ"
 #include "chapter2-part2.typ"
-#include "chapter2.5.typ"
+#include "chapter2-part3.typ"
+#include "chapter2-part4.typ"

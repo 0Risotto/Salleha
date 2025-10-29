@@ -7,7 +7,7 @@ is based on a highly structured approach, it will help us maintain organization 
 See @WaterfallSoftwareProcessModel.
 // #To-Do : will change the image to make the colour scheme fit the theme. and add it as a figure
 #figure(
-  image("../../assets/chapter2/waterfallimage.jpg")
+  image("../../assets/chapter2/waterfallmodel.svg")
   ,caption: [Waterfall Software Process Model]
 )<WaterfallSoftwareProcessModel>
  

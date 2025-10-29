@@ -176,6 +176,7 @@ it complies with the policies set by the country's laws and Institutions.
 #pagebreak()
 *Benefit and Payback Analysis:*
 #align(center)[
+  #show figure : set par(justify: false) 
   #figure(
     table(
       align: horizon,
@@ -188,7 +189,7 @@ it complies with the policies set by the country's laws and Institutions.
         [*Discount Rate (7%)*], [1], [0.934], [0.873], [0.813], [0.763], [0.713],
         [*Net Present Value (NPV)*], [-39,500 JD], [8,406 JD], [8,730 JD], [8,943 JD], [9,156 JD], [9,269 JD],
         [*Cumulative NPV*], [-39,500 JD], [-31,094 JD], [-22,364 JD], [-13,421 JD], [-4,265 JD], [5,004 JD],
-        [*Payback Period*], [*4 years+*],[4.6 years],
+        [*Payback Period*], [*4 years+*],table.cell(colspan: 5,align: right)[*4.6 years*],
     
     ),
     caption: [Benefit and Payback Analysis]
