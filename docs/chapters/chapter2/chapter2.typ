@@ -6,3 +6,5 @@
 #include "chapter2-part3.typ"
 #include "chapter2-part4.typ"
 #include "chapter2-part5.typ"
+#include "chapter2-part6.typ"
+#include "chapter2-part7.typ"

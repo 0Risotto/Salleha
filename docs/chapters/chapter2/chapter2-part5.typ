@@ -59,43 +59,30 @@
 
 - *$P = 80%$* 
 - *Planned Value ($P V$) = 4,000 JD*
-#strong[Actual Cost (AC)] = 1,000 JD
 
-#strong[Earned Value (EV)] = 3,200 JD
-#linebreak()
-#linebreak()
+- #strong[Actual Cost ($A C$)] = 1,000 JD
 
-#strong[Cost Variance (CV)] = 2,200 JD
+- #strong[Earned Value ($E V$)] = 3,200 JD
 
- --We have saved 2,200 JD on the planning phase
-#linebreak()#linebreak()
+- #strong[Cost Variance (CV)] = 2,200 JD 
+  - We have saved 2,200 JD on the planning phase
 
+- #strong[Schedule Variance ($S V$)] = \(-800\) JD 
+  - This indicates delayed progress in the planning phase.
 
-#strong[Schedule Variance (SV)] = \(-800\) JD
-
---This indicates delayed progress in the planning phase.
-#linebreak()#linebreak()
+- #strong[Cost Performance Index ($C P I$)]= \(3.2\)  
+  - We are under budget. The team is spending less than planned to accomplish the work.
 
 
-#strong[Cost Performance Index (CPI)]= \(3.2\)
+- #strong[Schedule Performance Index ($S P I$)] = \(0.8\)
+  - We are behind schedule. The progress is slower than expected.
 
---We are under budget. The team is spending less than planned to accomplish the work.
-#linebreak()#linebreak()
+- #strong[Estimate to Complete ($E T C$)] = \(13,593.75\) JD
 
-
-#strong[Schedule Performance Index (SPI)] = \(0.8\)
-
---* *We are behind schedule. The progress is slower than expected.
-#linebreak()#linebreak()
+- #strong[Estimate at Completion ($E A C$)] = 14843.75 JD
 
 
-#strong[Estimate to Complete (ETC)] = \(13,593.75\) JD
-#linebreak()#linebreak()
-#strong[Estimate at Completion (EAC)] = 14843.75 JD
-
-
-#pagebreak()
-Based on information we gained from EVM analysis, we have to expedite our schedule.
+- Based on information we gained from EVM analysis, we have to expedite our schedule.
 #align(center)[
   #figure(
     table(
