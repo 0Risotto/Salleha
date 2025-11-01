@@ -1,5 +1,4 @@
-== 2.7 Assigning Team Members to Tasks 
-
+== Assigning Team Members to Tasks 
 
 #align(center)[
   #figure(
@@ -37,15 +36,10 @@
 
 #pagebreak()
 
-== 2.8 Monitoring and Controlling Mechanisms 
-
-
+== Monitoring and Controlling Mechanisms 
    Earned value management  
-
-
-
-#align(center)[
-  #figure(
+#show figure: set par(justify: false)
+#figure(
     table(
       columns: 7, align:left,
       [*Phase*], [*Estimated cost*], [*Cumulative estimate*], [*Estimated duration*], [*Stage completed*], [*Actual cost of Phase to date*], [*Actual cost of project to date*],
@@ -60,13 +54,11 @@
     ),
     caption: [Earned Value Management Progress Tracking]
   )
-]
 
 
-#strong[P = 80%]
 
-#strong[Planned Value (PV)] = 4,000 JD
-    
+- *$P = 80%$* 
+- *Planned Value ($P V$) = 4,000 JD*
 #strong[Actual Cost (AC)] = 1,000 JD
 
 #strong[Earned Value (EV)] = 3,200 JD
