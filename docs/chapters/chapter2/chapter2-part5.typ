@@ -60,26 +60,26 @@
 - *$P = 80%$* 
 - *Planned Value ($P V$) = 4,000 JD*
 
-- #strong[Actual Cost ($A C$)] = 1,000 JD
+- *Actual Cost ($A C$) = 1,000 JD *
 
-- #strong[Earned Value ($E V$)] = 3,200 JD
+- *Earned Value ($E V$) = 3,200 JD*
 
-- #strong[Cost Variance (CV)] = 2,200 JD 
+- *Cost Variance (CV) = 2,200 JD* 
   - We have saved 2,200 JD on the planning phase
 
-- #strong[Schedule Variance ($S V$)] = \(-800\) JD 
+- *Schedule Variance ($S V$) = (-800) JD *
   - This indicates delayed progress in the planning phase.
 
-- #strong[Cost Performance Index ($C P I$)]= \(3.2\)  
+- * Cost Performance Index ($C P I$)= (3.2)  *
   - We are under budget. The team is spending less than planned to accomplish the work.
 
 
-- #strong[Schedule Performance Index ($S P I$)] = \(0.8\)
+- * Schedule Performance Index ($S P I$) = \(0.8\) *
   - We are behind schedule. The progress is slower than expected.
 
-- #strong[Estimate to Complete ($E T C$)] = \(13,593.75\) JD
+- * Estimate to Complete ($E T C$) = (13,593.75) JD *
 
-- #strong[Estimate at Completion ($E A C$)] = 14843.75 JD
+- *Estimate at Completion ($E A C$) = 14843.75 JD*
 
 
 - Based on information we gained from EVM analysis, we have to expedite our schedule.
