@@ -1,8 +1,12 @@
+#image("assets/cover/projectcover.png")
+#counter(page).update(0)
+#pagebreak()
+
 #set page(
   paper: "a4",
   header: align(left)[Systems Analysis and Design Project],
   margin: 2cm,
-  numbering:"1",
+  numbering:"i",
  )
 
 #set text(size: 12pt,font: "Times New Roman Cyr")
@@ -66,7 +70,8 @@
 #pagebreak()
 
 #set par(justify: true,spacing: 2em)
-
+#set page(numbering:"1")
+#counter(page).update(1)
 
 #include "chapters/chapter1/chapter1.typ"
 #include "chapters/chapter2/chapter2.typ"
