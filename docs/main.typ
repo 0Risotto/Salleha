@@ -1,4 +1,5 @@
-#image("assets/cover/projectcover.png")
+#set page(margin:0em )
+#image("assets/cover/projectcover.png", height: 100%)
 #counter(page).update(0)
 #pagebreak()
 
@@ -16,9 +17,7 @@
 #v(4cm)
 #align(center)[
 
- 
-
-  #text(size: 16pt)[SALLEHA]
+  #image("assets/logo/salleha_logo.png",height: 23%)
 
   Systems Analysis and Design \
   Supervised by: Dr.Hamad Alsawalqah \ 
