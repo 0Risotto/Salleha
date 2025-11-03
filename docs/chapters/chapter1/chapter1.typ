@@ -115,6 +115,8 @@ making the website easy for Seniors users to understand and use .
 Cloud Hosting: We are using GitHub to store and manage the project online. 
 It helps us work together, keep track of changes, and easily share the project with others.
 
+All the required resources including hardware, software tools, and hosting services are already available and accessible, ensuring smooth development and operation of the SALLEHA platform.
+
 Since all these technologies are part of what we have learned at university and
 practiced in various projects,
 we are fully capable of developing
@@ -122,14 +124,11 @@ and maintaining the SALLEHA platform
 using them. Our academic background
 and hands-on experience give us the technical foundation and confidence to build this system successfully.
 === Operational Feasibility
-The proposed web and mobile application is operationally feasible, it
-designed to get maintenance requests in facilities like universities,offices, or residential buildings, enabling the users to report issues, track 
-progress, and get updates.
-It’s a web and mobile application, so the users can access it from any
-We expected that our system will gain a wide acceptance from users, admins 
-And technicians because it solves a very needed problem and saves time and effort.
-It will have clear privacy guidelines and mechanisms to ensure that our users will be secured.      
-it complies with the policies set by the country's laws and Institutions.
+The proposed web and mobile application is operationally feasible. It is designed to receive maintenance requests in facilities such as universities, offices, or residential buildings, enabling users to report issues, track progress, and receive updates.
+Since it is both a web and mobile application, users can access it from anywhere.
+We expect that our system will gain wide acceptance from users, admins, and technicians because it addresses an essential need and saves time and effort.
+It will have clear privacy guidelines and mechanisms to ensure that our users’ data will be secured, and it complies with the policies set by the country's laws and institutions.
+Additionally, the system is well-suited to the local culture and environment. The end users are capable of using it smoothly and effectively without requiring extensive training, due to its simple and user-friendly design.
 
 === Economic Feasibility
 *Development Costs:*   
