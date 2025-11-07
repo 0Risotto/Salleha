@@ -115,7 +115,11 @@ making the website easy for Seniors users to understand and use .
 Cloud Hosting: We are using GitHub to store and manage the project online. 
 It helps us work together, keep track of changes, and easily share the project with others.
 
+<<<<<<< HEAD
 All the required resources — including hardware, software tools, and hosting services — are already available and accessible, ensuring smooth development and operation of the SALLEHA platform.
+=======
+All the required resources including hardware, software tools, and hosting services are already available and accessible, ensuring smooth development and operation of the SALLEHA platform.
+>>>>>>> 05b62470adcddd05ac56d1eb4e2b392f6e87f9e0
 
 Since all these technologies are part of what we have learned at university and
 practiced in various projects,
@@ -124,6 +128,14 @@ and maintaining the SALLEHA platform
 using them. Our academic background
 and hands-on experience give us the technical foundation and confidence to build this system successfully.
 === Operational Feasibility
+<<<<<<< HEAD
+=======
+The proposed web and mobile application is operationally feasible. It is designed to receive maintenance requests in facilities such as universities, offices, or residential buildings, enabling users to report issues, track progress, and receive updates.
+Since it is both a web and mobile application, users can access it from anywhere.
+We expect that our system will gain wide acceptance from users, admins, and technicians because it addresses an essential need and saves time and effort.
+It will have clear privacy guidelines and mechanisms to ensure that our users’ data will be secured, and it complies with the policies set by the country's laws and institutions.
+Additionally, the system is well-suited to the local culture and environment. The end users are capable of using it smoothly and effectively without requiring extensive training, due to its simple and user-friendly design.
+>>>>>>> 05b62470adcddd05ac56d1eb4e2b392f6e87f9e0
 
 The proposed web and mobile application is operationally feasible. It is designed to receive maintenance requests in facilities such as universities, offices, or residential buildings, enabling users to report issues, track progress, and receive updates.
 Since it is both a web and mobile application, users can access it from anywhere.
