@@ -119,34 +119,23 @@
 
 
 
-#align(center)[
   #figure(
     table(
       columns: 7,
       align: center,
       stroke: 0.5pt,
+        table.cell(rowspan: 3)[*Eligible activities*],
+        table.cell( rowspan: 3)[*Activity chosen*],
+        table.cell( rowspan: 2,colspan: 3)[*Time for each path (Days)*],
+        table.cell( rowspan: 3)[*Cost (JD/day)*],
+        table.cell(rowspan: 3)[*Cumulative cost (JD)*],
 
-      // HEADER ROW 1
-      table.header(
-        table.cell(fill: rgb(0,140,200), rowspan: 2)[*Eligible activities*],
-        table.cell(fill: rgb(0,140,200), rowspan: 2)[*Activity chosen*],
-        table.cell(fill: rgb(0,140,200), colspan: 3)[*Time for each path (Days)*],
-        table.cell(fill: rgb(0,140,200), rowspan: 2)[*Cost (JD/day)*],
-        table.cell(fill: rgb(0,140,200), rowspan: 2)[*Cumulative cost (JD)*],
-      ),
 
-      // HEADER ROW 2 — must have 7 columns total
-      table.header(
-        table.cell(fill: rgb(0,140,200))[], // empty for Eligible activities
-        table.cell(fill: rgb(0,140,200))[], // empty for Activity chosen
-        table.cell(fill: rgb(0,140,200))[*83*],
-        table.cell(fill: rgb(0,140,200))[*83*],
-        table.cell(fill: rgb(0,140,200))[*73*],
-        table.cell(fill: rgb(0,140,200))[], // empty for Cost
-        table.cell(fill: rgb(0,140,200))[], // empty for Cumulative cost
-      ),
+        table.cell(fill: rgb("#A6CCEB"))[*83*],
+        table.cell(fill: rgb("#A6CCEB"))[*83*],
+        table.cell(fill: rgb("#A6CCEB"))[*73*],
+      
 
-      // DATA ROWS 
       [T1,T4,
       T10,T11,T12,
       T17,T21], [T21], [82], [82], [72], [150], [150],
@@ -198,7 +187,7 @@
     ),
     caption: [Schedule Expediting Table]
   )
-]
+
 
 
 
