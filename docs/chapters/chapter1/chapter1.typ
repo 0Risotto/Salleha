@@ -115,11 +115,7 @@ making the website easy for Seniors users to understand and use .
 Cloud Hosting: We are using GitHub to store and manage the project online. 
 It helps us work together, keep track of changes, and easily share the project with others.
 
-<<<<<<< HEAD
-All the required resources — including hardware, software tools, and hosting services — are already available and accessible, ensuring smooth development and operation of the SALLEHA platform.
-=======
 All the required resources including hardware, software tools, and hosting services are already available and accessible, ensuring smooth development and operation of the SALLEHA platform.
->>>>>>> 05b62470adcddd05ac56d1eb4e2b392f6e87f9e0
 
 Since all these technologies are part of what we have learned at university and
 practiced in various projects,
