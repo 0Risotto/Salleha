@@ -3,61 +3,43 @@
 The functional requirements for the Maintenance Management System are detailed in the table below. Each requirement is assigned a unique number for reference.
 #figure(
   align(left)[
-    #table(columns: 3, 
-    [*Number*],[*Functional Requirements*],[*Description*],
-    [1],
-    [Create account ],
-    [The user registers their personal information, including name, email, mobile number and selects the account type],
+    #table(
+      columns: 3,
 
-    [2],
-    [Login],
-    [The user will login to their account to access the platform],
+      [*Number*], [*Functional Requirements*], [*Description*],
 
-    [3],
-    [Logout ],
-    [Users can log out of their accounts securely to protect their personal information.],
+      table.cell(colspan: 3)[#align(center)[Users Requirements]],
 
-    [4],
-    [Edit/Update Profile  ],
-    [Users can navigate back to the home page of the platform at any point.],
+      [1], [Create account], [The user registers their personal information, including name, email, mobile number and selects the account type],
 
-    [5],
-    [Got To The Home Page ],
-    [Users can navigate back to the home page of the platform at any point.],
+      [2], [Login], [The user will login to their account to access the platform],
 
-    [6],
-    [Notifications ],
-    [Stakeholders should be able to monitor the status of their requests (e.g., received, scheduled, in progress, completed) and receive automated updates.],
+      [3], [Logout], [Users can log out of their accounts securely to protect their personal information.],
 
-    [7],
-    [Role Based Dashboards ],
-    [Each user sees a customized dashboard depending on their role in the system.],
+      [4], [Edit/Update Profile], [Users can navigate back to the home page of the platform at any point.],
 
-    [8],
-    [Ticket Submission],
-    [Users submit their maintenance tickets through the website interface; it must include text description for the issue ,specifying the location, and a media like photos, videos, or other relevant documents. ],
+      [5], [Go To The Home Page], [Users can navigate back to the home page of the platform at any point.],
 
-    [9],
-    [Maintenance History],
-    [Complete maintenance history for all items,like date of maintenance, the action performed, the personnel responsible, and any related notes or outcomes.],
+      [6], [Notifications], [Stakeholders should be able to monitor the status of their requests (e.g., received, scheduled, in progress, completed) and receive automated updates.],
 
-    [10],
-    [Automated Prioritization],
-    [The system must automatically prioritize requests based on predefined criteria (e.g., safety risks, operational impact, asset criticality).],   
+      // ⬇️ FULL-WIDTH ROW (after requirement 6)
+      table.cell(colspan: 3)[#align(center)[System Requirements]],
 
-    [11],
-    [Multimedia Attachments],
-    [Ability to attach photos, videos, or other relevant documents to provide clarity on the issue.],   
+      [7], [Role Based Dashboards], [Each user sees a customized dashboard depending on their role in the system.],
 
-    [12],
-    [Repeat / Duplicate  The Issue ],
-    [users can report the same problem if it occurs again.],   
+      [8], [Ticket Submission], [Users submit their maintenance tickets through the website interface; it must include text description for the issue, location, and media files.],
 
-    [13],
-    [],
-    [],   
+      [9], [Maintenance History], [Complete maintenance history for all items, including date, action performed, personnel responsible, and notes.],
 
-  )
+      [10], [Automated Prioritization], [The system must automatically prioritize requests based on predefined criteria (e.g., safety risks, operational impact, asset criticality).],
+
+      [11], [Multimedia Attachments], [Ability to attach photos, videos, or other relevant documents to provide clarity on the issue.],
+
+      [12], [Repeat / Duplicate The Issue], [Users can report the same problem if it occurs again.],
+
+      [13], [], [],
+    )
   ]
 )
+
 
