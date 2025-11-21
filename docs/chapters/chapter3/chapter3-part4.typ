@@ -16,9 +16,9 @@ The functional requirements for the Maintenance Management System are detailed i
 
       [3], [Logout], [Users can log out of their accounts securely to protect their personal information.],
 
-      [4], [Edit/Update Profile], [Users can navigate back to the home page of the platform at any point.],
+      [4], [Edit/Update Profile], [Users can update thier information in their profile like phone number, location and efficiency for certain jobs.],
 
-      [5], [Go To The Home Page], [Users can navigate back to the home page of the platform at any point.],
+      [5], [Go To The Home Page], [Users can update thier information in their profile like phone number, location and efficiency for certain jobs.],
 
       [6], [Notifications], [Stakeholders should be able to monitor the status of their requests (e.g., received, scheduled, in progress, completed) and receive automated updates.],
 
@@ -27,9 +27,9 @@ The functional requirements for the Maintenance Management System are detailed i
 
       [7], [Role Based Dashboards], [Each user sees a customized dashboard depending on their role in the system.],
 
-      [8], [Ticket Submission], [Users submit their maintenance tickets through the website interface; it must include text description for the issue, location, and media files.],
+      [8], [Ticket Submission], [Users submit their maintenance tickets through the website interface; it must include text description for the issue ,specifying the location, and a media like photos, videos, or other relevant documents. ],
 
-      [9], [Maintenance History], [Complete maintenance history for all items, including date, action performed, personnel responsible, and notes.],
+      [9], [Maintenance History], [Complete maintenance history for all items,like date of maintenance, the action performed, the personnel responsible, and any related notes or outcomes.],
 
       [10], [Automated Prioritization], [The system must automatically prioritize requests based on predefined criteria (e.g., safety risks, operational impact, asset criticality).],
 
