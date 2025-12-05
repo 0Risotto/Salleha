@@ -1,11 +1,9 @@
 // Orjoan 
 == 3.5 Functional Requirements Specification 
 The functional requirements for the Maintenance Management System are detailed in the table below. Each requirement is assigned a unique number for reference.
-#figure(
-  align(left)[
+
     #table(
       columns: 3,
-
       [*Number*], [*Functional Requirements*], [*Description*],
 
       table.cell(colspan: 3)[#align(center)[Users Requirements]],
@@ -68,7 +66,7 @@ The functional requirements for the Maintenance Management System are detailed i
 
       [13], [], [],
     )
-  ]
-)
+
+
 
 
