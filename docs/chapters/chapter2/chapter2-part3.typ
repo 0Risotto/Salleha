@@ -1,4 +1,3 @@
-
 == Project tasks
 
 #show figure: set columns(7)
@@ -6,8 +5,8 @@
 #show figure: set align(left)
 #show figure: set par(justify: false)
 //headers
-#let header1 = (table.cell(fill: rgb(126, 166, 224) )[*Phase*], table.cell(fill: rgb(126, 166, 224))[*Task*], table.cell(fill: rgb(126, 166, 224))[*Detailed task*], table.cell(fill: rgb(126, 166, 224))[*EstimatedTime*])
-#let header2 = (table.cell()[],table.cell(fill: rgb("#92c0e6d0"))[*Resources Needed*], table.cell(fill: rgb("#92c0e6d0"))[*Dependencies and Constraints*], table.cell(fill: rgb("#92c0e6d0"))[*Deliverables & Milestones*])
+#let header1 = (table.cell(fill: rgb(126, 166, 224) )[Phase], table.cell(fill: rgb(126, 166, 224))[Task], table.cell(fill: rgb(126, 166, 224))[Detailed task], table.cell(fill: rgb(126, 166, 224))[EstimatedTime])
+#let header2 = (table.cell()[],table.cell(fill: rgb("#92c0e6d0"))[Resources Needed], table.cell(fill: rgb("#92c0e6d0"))[Dependencies and Constraints], table.cell(fill: rgb("#92c0e6d0"))[Deliverables & Milestones])
 
 #let a = table.cell(colspan: 4, inset: 0pt)[]
 #figure(
@@ -40,41 +39,25 @@ table(columns: 4,
   []
 ,
 list(
-  [ *Skills*
-- A project leader to coordinate meetings, and define a schedule
-- A team work with technical and technology skills
-  ],
-[*Hardware*
-- Team members laptops for development and documentation
-- A Shared test device for quick mobile and web checks
-  ],
-[*Software*
-- GitHub is used to store both the Typst documentation files and the platform’s source code
-- Draw.io for diagrams and Figma for design
-- Typst for documentation
-- Risk register template, and a simple quality checklist template
-- Google Sheets for schedule and resource tables and the risk register
-]
+ [N/A]
 ),
 list(
-  [ *Dependencies*
+  [ Dependencies
 - Approved project charter
 - Availability of key stakeholders for interviews such as the requesters and the facility managers
   ],
-  [*Constraints*
-- To complete this phase in 1 week
-- The availability of stakeholders, so that the approvals and reviews will not be delayed
-- Legacy constraints
+  [Constraints
+
 - Budget constraints
 ]
 ),
 list(
-  [ *Deliverables*
+  [ Deliverables
 - Work breakdown structure diagram
 - Table with risk, impact, probability, priority, and mitigation
 - Quality standards document (acceptance criteria checklist)
   ],[
-*Milestones*
+Milestones
 - M1.1: Charter Approved and communicated to the team.
 - M1.2: Work Breakdown Structure completed and reviewed by all members. 
 - M1.3: Resource plan and schedule baseline approved.
@@ -111,38 +94,21 @@ list(
   []
 ,
 list(
-  [*Skills*
-- Business Analyst to lead stakeholder interviews and surveys
-- Designers to create wireframes and prototypes for the React web and the Flutter mobile.
-- DB Designer to build ERDs and map entities to DB structure
-- Developers
-- Project manager to be responsible for the overall execution of the project
-- Quality assurance specialists
-    ],
-[*Hardware*
-- Team laptops
-    ]
-,[*Software*
-- Elicitation tools: Google Forms for surveys, Google Meet for interviews, and audio notes. 
-- Draw.io for diagrams, MySQL Workbench, and a UML tool for use-case diagrams. 
-- Figma for early UI/UX validation by creating wireframes and low-fidelity prototypes
-- GitHub for collaboration and tracking
-- Requirements traceability matrix spreadsheet
-]
+  [N/A]
 ),
 list(
-  [*Dependencies*
-  - Stakeholder availability
+  [Dependencies
+  
   - Access to collaboration tools so the informations can be shared and reviewed.
 ],
-  [*Constraints*
-  - 2 weeks for full elicitation, modeling and validation.
+  [Constraints
+  
   - Stakeholder time; limited availability may restrict depth of interviews
   - Data privacy when handaling the facility data
 ]
 ),
 list(
-  [*Deliverables*
+  [Deliverables
 - Software Requirements Specification
 - Use-case diagrams for the main maintenance workflows 
 - Entity-Relationship Diagram
@@ -152,11 +118,10 @@ list(
 - Requirements validation report
 - Requirements Traceability Matrix
   ],
-[*Milestones*
-- M2.1: Complete stakeholder interviews, surveys, and observations.
-- M2.2: Draft Software Requirements Specification (SRS) prepared.
-- M2.3: Software Requirements Specification (SRS) reviewed and approved by stakeholders.
-- M2.4: Requirements validation and traceability matrix completed.
+[Milestones
+
+- M2.1: Software Requirements Specification (SRS) reviewed and approved by stakeholders.
+- M2.2: Requirements validation and traceability matrix completed.
 
 ]
 ),
@@ -188,48 +153,31 @@ list(
 ,
 list(
   [
-  *Skills*
-- Software Architect experienced in web and mobile systems
-- UI/UX Designer
-- Backend Developer
-- Frontend Developers (React and Flutter)
-- Database Engineer for schema and constraints
-- QA Engineer 
-    ],
-[*Hardware*
-- Developer laptops and PCs
-- Cloud  host for test servers 
-    ],
-[*Software*
-- Visual Studio Code, Android Studio
-- Draw.io and Figma for diagrams and UI design
-- GitHub for version control
-- Database tools (MySQL Workbench)
-- Communication tools 
+ Information Security Engineer
 ]
 ),
 list(
-  [*Dependencies*
+  [Dependencies
 
 - Completion and approval of Software Requirements Specification 
 - UI design depends on confirmed user workflows and functional requirements because they show what the user needs to do and how the system should respond 
       ],
-[*Constraints*
+[Constraints
 
-- Limited by team availability
+- Technology constraints
 - Design must comply with quality standards and security requirements
-- Time constraint: 2 weeks 
+
 ]
 ),
 list(
-  [*Deliverables*
+  [Deliverables
 
 - Web and Mobile System Architecture Document 
 - High-Level Design including  system modules and interaction diagrams
 - Detailed Design including Class diagrams, Sequence diagrams, Database schema and API documentation
 - UI/UX prototypes for web and mobile
       ],
-[*Milestones*
+[Milestones
 
 - M3.1: System architecture approved.
 - M3.2: High-level and detailed design documents completed.
@@ -269,40 +217,20 @@ list(
   []
 ,
 list(
-  [ *Skills*
-- Frontend Developers (React for web, and Flutter for mobile)
-- Backend Developer (we will use Node.js)
-- Database Engineer (MySQL)
-- DevOps Engineer for setup 
-- QA Engineer for unit and integration testing 
-      ],
-      [ *Hardware*
-- Developer PCS and laptops
-- Android and iOS testing devices or emulators
-- Server environment 
-    ],[
-*Software*
-- Visual Studio Code, Android Studio, and Xcode for Flutter
-- Node.js, npm, Flutter SDK, Git
-- Database tools (MySQL Workbench)
-- Postman for API testing
-- GitHub for repository hosting and version control
-- GitHub as an integration tool for both our documentation (created using Typst) and the project code
+  [ N/A
 ]
 ),
 list(
-  [*Dependencies*
+  [Dependencies
 - Depends on approved design phase deliverables auch as architecture, and database schema
   ],
-[*Constraints*
-- We must follow the coding standards, security rules, and framework versions that were set in the earlier phases
-- The work is limited by team availability and the performance of devices or emulators used for development
-- The time limit is 4 weeks; any delays may affect the testing and deployment phases
+[Constraints
+- Follow the coding standards, security rules, and framework versions that were set in the earlier phases
 - Internet or cloud service interruptions may slow down integration and testing activities
 ]
 ),
 list(
-  [*Deliverables*
+  [Deliverables
 - Git repository 
 - Working web and mobile front-end modules (React and Flutter)
 - Implemented database schema 
@@ -346,31 +274,27 @@ list(
   
   [],
 list(
-  [*Skills*
-  - QA engineers skilled in web and mobile testing, test automation, and bug tracking
-    ],
-  [*Hardware*
-  - Test devices (Android and iOS)],
   [
- *Software*
-- Postman for API testing, and JMeter for performance testing
+    External QA engineers
 ]
 ),
 list(
-  [*Dependencies*
-- It is dependent on completion of the Development Phase and availability of a stable build.
+  [Dependencies
 - Test data and environment setup depends on finalized database
+- Test plan and test cases finalized
   ],
-  [*Constraints*
+  [Constraints
+  - Availability of performance-test and security-test tools
 - Limited time for testing may constrain full regression coverage
 - Must follow project’s quality assurance and version control procedures
+
 ]
 ),
 list(
-  [*Deliverables*
+  [Deliverables
 - Completed integration and system test reports
 - Signed-off User Acceptance Test report from stakeholders to be ready for deployment 
-  ],[*Milestones*
+  ],[Milestones
 - M5.1: Test plan and test cases developed and approved.
 - M5.2: System and integration tests executed successfully.
 - M5.3: User Acceptance Testing (UAT) completed and approved.
@@ -412,40 +336,26 @@ list(
   []
   ,
   list(
-  [*Skills*
-- DevOps engineer
-- System administrator
-- Database administrator
-- Technical support specialist.
-    ],
- [*Software*
-- GitHub Actions
-- Google Cloud (hosting)
-- Firebase (mobile integration)
-- Google Analytics as a monitoring tool
-  ],
-[*Hardware*
-- Cloud servers
-- Mobile and desktop devices
+  [ N/A
 ]
   ),
   list(
-  [*Dependencies*
+  [Dependencies
 - Dependent on successful completion of testing 
   ],[
-*Constraints*
+Constraints
 - It must be scheduled 
 - Risk of configuration errors 
 - Security and data compliance must be checked and confirmed before the system goes live
 ]
   ),
   list(
-  [*Deliverables*
+  [Deliverables
 - Successfully deployed web and mobile applications
 - User training and support materials completed
 - Documented post-deployment review and lessons learned
 ],[
-*Milestones*
+Milestones
 - M6.1: Final stakeholder approval for production release obtained.
 - M6.2: Web and mobile applications deployed to production environment.
 - M6.3: User training sessions completed.
@@ -454,5 +364,3 @@ list(
 ]
   ),
 ))
-#pagebreak()
-
