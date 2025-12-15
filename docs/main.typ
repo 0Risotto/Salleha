@@ -13,7 +13,6 @@
 #set text(size: 12pt,font: "Times New Roman Cyr")
 #set table(fill: (coloum, row) => if  row == 0  { rgb(126, 166, 224)} else if coloum == 0  { rgb(189,193,201) },)
 //#set text(size: 12pt,)
-
 #v(4cm)
 #align(center)[
 
@@ -68,6 +67,7 @@
 )
 #pagebreak()
 
+#show figure.where(kind:table): set figure.caption(position: top)
 #set par(justify: true,spacing: 2em)
 #set page(numbering:"1")
 #counter(page).update(1)
