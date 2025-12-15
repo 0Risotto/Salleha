@@ -1,5 +1,4 @@
 // Mosa
-
 == User Requirements
 #show figure: set block(breakable:true)
 #figure(
@@ -35,6 +34,6 @@
     [FR-27], [Export Reports], [Administrators shall export maintenance reports and analytics in PDF or Excel.], [Administrator],
     [FR-28], [Manage Users], [Administrators shall manage registered users, including activating, deactivating, or updating accounts.], [Administrator],
   ),
-  caption: [Functional Requirements for Smart Maintenance System with Function Names],
+  caption: [High level Functional Requirements ],
 )
 
