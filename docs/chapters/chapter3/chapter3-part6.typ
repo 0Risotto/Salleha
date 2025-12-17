@@ -1,5 +1,5 @@
 // Orjoan
-== 3.7 Non-Functional Requirements
+==  Non-Functional Requirements
 The non-functional requirements for the Maintenance Management System are outlined in the table below. Each requirement is assigned a unique number for reference.
 #figure(
   align(left)[
@@ -31,31 +31,31 @@ The non-functional requirements for the Maintenance Management System are outlin
     [The system must be easy to maintain , and it should deal with errors and solve them when they appear in the system.]
   )
   ]
+  , caption: [Non-Functional Requirements]
 )
 
-== 3.9 Requirements Validation and Review Summary
+==  Requirements Validation and Review Summary
 
-== How We Verified the Requirements
+=== How We Verified the Requirements
 
 We verified the requirements by reviewing them with both our team and the stakeholders.
 
-=== Team Review
+==== Team Review
 All team members *(Anas, Shaima, Orjoan, Musa, and Hanen)* reviewed the requirements together.  
 We went through each requirement to ensure everyone fully understood it.  
 Each member provided feedback and suggestions, which were used to refine the requirements.
 
-=== Stakeholder Review
+==== Stakeholder Review
 We presented the requirements to *Dr. Hamad* for validation.  
 We also gathered feedback from three classmates acting as potential users.  
 We updated and improved the requirements based on their comments and suggestions.
 
----
 
-== How We Confirmed the Requirements Are Correct, Clear, and Complete
+=== How We Confirmed the Requirements Are Correct, Clear, and Complete
 
 We used two main methods to validate the clarity and correctness of the requirements: **Mockups** and **Walkthroughs**.
 
-=== Method 1: Mockups
+==== Method 1: Mockups
 
 *What we did:*  
 We created UI mockups using Figma.
@@ -71,7 +71,7 @@ We created UI mockups using Figma.
 - Confirmed that role-based dashboards function correctly  
 - Verified that priority assignment and task flow work as intended  
 
-=== Method 2: Walkthroughs
+==== Method 2: Walkthroughs
 
 *What we did:*  
 We conducted a full system walkthrough during a meeting.

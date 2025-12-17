@@ -1,11 +1,21 @@
 // Shaima
 
+<<<<<<< HEAD
 #set text(font: "Times New Roman")
 == Data Requirements
 
 Data requirements is the specification for the information the system will depend on, store in the database, and process to achieve the business goals. These requirements are important for effective system design and implementation. For our smart maintenance request system, the core data entities, including their attributes, constraints, and the key relationships between them, are:
  
  #show figure : set block(breakable:true)
+=======
+
+== Data Requirements
+
+ #show figure : set block(breakable:true)
+ #show figure : set par(justify:false)
+Data requirements is the specification for the information the system will depend on, store in the database, and process to achieve the business goals. These requirements are important for effective system design and implementation. For our smart maintenance request system, the core data entities, including their attributes, constraints, and the key relationships between them, are:
+ 
+>>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
 #align(center)[
   #figure(
   table(
@@ -44,4 +54,8 @@ Data requirements is the specification for the information the system will depen
 , caption: [Data Requirements]
 )]
 <datarequirements>
+<<<<<<< HEAD
 And to allow the system to automate workflows, these entities we listed are interconnected in a centralized database, interacting with each other to streamline the maintenance lifecycle from issue reporting to resolution and performance optimization.
+=======
+And to allow the system to automate workflows, these entities we listed are interconnected in a centralized database, interacting with each other to streamline the maintenance lifecycle from issue reporting to resolution and performance optimization.
+>>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
