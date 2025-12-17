@@ -291,6 +291,7 @@ will be sent to users to inform them about progress and completion.
 
 #underline[Expected Deliverables:]
 A Maintenance Request Software that will include:
+
 - *Request Submission:*
 Maintenance teams will accept requests through
 the system to ensure they collect all necessary
@@ -305,13 +306,13 @@ Each request will be evaluated to
 ensure that it is valid,
 not redundant, and not already being addressed.
 
-*Status Updates to Deliver Better Customer Service:*
+- *Status Updates to Deliver Better Customer Service:*
 To build trust between managers and customers, there will be a communication tool that responds back to requesters to inform them that their requests are accepted and to update them about the status of their issues until completion. These updates will be automated through real-time notifications.
 
-*Database Design and Documentation:*
+- *Database Design and Documentation:*
 For storing and tracking requests, there will be request records that provide a clear view of all issues, and a database that documents what issues were reported, how they were resolved, and when. This will help with future planning and decision-making, as well as provide tools for summarizing the analysis, design, and implementation process.
 
-*Performance Tracking:*
+- *Performance Tracking:*
 Updates on team work status for measuring team performance will help ensure that the original problem has been addressed and will identify bottlenecks in the request process. This will lead to providing excellent customer service and demonstrate that the maintenance team is responsive, works well, and continues improving the organization’s overall reputation. This will be done by tracking average response time and turnaround time.
 
 == Local and Global Impact of the Proposed Solution 
