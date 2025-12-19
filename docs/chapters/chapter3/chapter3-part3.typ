@@ -1,3 +1,11 @@
+== Context Diagram
+#figure(
+  image(
+"../../assets/chapter3/contextDiagram.png"
+),
+  caption: [Context Diagram]
+)<Context_Diagram>
+
 // Haneen
 == Use case diagram 
 
