@@ -5,8 +5,8 @@
 #show figure: set align(left)
 #show figure: set par(justify: false)
 //headers
-#let header1 = (table.cell(fill: rgb(126, 166, 224) )[Phase], table.cell(fill: rgb(126, 166, 224))[Task], table.cell(fill: rgb(126, 166, 224))[Detailed task], table.cell(fill: rgb(126, 166, 224))[EstimatedTime])
-#let header2 = (table.cell()[],table.cell(fill: rgb("#92c0e6d0"))[Resources Needed], table.cell(fill: rgb("#92c0e6d0"))[Dependencies and Constraints], table.cell(fill: rgb("#92c0e6d0"))[Deliverables & Milestones])
+#let header1 = (table.cell(fill: rgb(126, 166, 224) )[*Phase*], table.cell(fill: rgb(126, 166, 224))[*Task*], table.cell(fill: rgb(126, 166, 224))[*Detailed task*], table.cell(fill: rgb(126, 166, 224))[*EstimatedTime*])
+#let header2 = (table.cell()[],table.cell(fill: rgb("#92c0e6d0"))[*Resources Needed*], table.cell(fill: rgb("#92c0e6d0"))[*Dependencies and Constraints*], table.cell(fill: rgb("#92c0e6d0"))[*Deliverables & Milestones*])
 
 #let a = table.cell(colspan: 4, inset: 0pt)[]
 #figure(
@@ -42,22 +42,22 @@ list(
  [N/A]
 ),
 list(
-  [ Dependencies
+  [ *Dependencies*
 - Approved project charter
 - Availability of key stakeholders for interviews such as the requesters and the facility managers
   ],
-  [Constraints
+  [*Constraints*
 
 - Budget constraints
 ]
 ),
 list(
-  [ Deliverables
+  [ *Deliverables*
 - Work breakdown structure diagram
 - Table with risk, impact, probability, priority, and mitigation
 - Quality standards document (acceptance criteria checklist)
   ],[
-Milestones
+*Milestones*
 - M1.1: Charter Approved and communicated to the team.
 - M1.2: Work Breakdown Structure completed and reviewed by all members. 
 - M1.3: Resource plan and schedule baseline approved.
@@ -97,18 +97,18 @@ list(
   [N/A]
 ),
 list(
-  [Dependencies
+  [*Dependencies*
   
   - Access to collaboration tools so the informations can be shared and reviewed.
 ],
-  [Constraints
+  [*Constraints*
   
   - Stakeholder time; limited availability may restrict depth of interviews
   - Data privacy when handaling the facility data
 ]
 ),
 list(
-  [Deliverables
+  [*Deliverables*
 - Software Requirements Specification
 - Use-case diagrams for the main maintenance workflows 
 - Entity-Relationship Diagram
@@ -118,7 +118,7 @@ list(
 - Requirements validation report
 - Requirements Traceability Matrix
   ],
-[Milestones
+[*Milestones*
 
 - M2.1: Software Requirements Specification (SRS) reviewed and approved by stakeholders.
 - M2.2: Requirements validation and traceability matrix completed.
@@ -157,12 +157,12 @@ list(
 ]
 ),
 list(
-  [Dependencies
+  [*Dependencies*
 
 - Completion and approval of Software Requirements Specification 
 - UI design depends on confirmed user workflows and functional requirements because they show what the user needs to do and how the system should respond 
       ],
-[Constraints
+[*Constraints*
 
 - Technology constraints
 - Design must comply with quality standards and security requirements
@@ -170,14 +170,14 @@ list(
 ]
 ),
 list(
-  [Deliverables
+  [*Deliverables*
 
 - Web and Mobile System Architecture Document 
 - High-Level Design including  system modules and interaction diagrams
 - Detailed Design including Class diagrams, Sequence diagrams, Database schema and API documentation
 - UI/UX prototypes for web and mobile
       ],
-[Milestones
+[*Milestones*
 
 - M3.1: System architecture approved.
 - M3.2: High-level and detailed design documents completed.
@@ -221,16 +221,16 @@ list(
 ]
 ),
 list(
-  [Dependencies
+  [*Dependencies*
 - Depends on approved design phase deliverables auch as architecture, and database schema
   ],
-[Constraints
+[*Constraints*
 - Follow the coding standards, security rules, and framework versions that were set in the earlier phases
 - Internet or cloud service interruptions may slow down integration and testing activities
 ]
 ),
 list(
-  [Deliverables
+  [*Deliverables*
 - Git repository 
 - Working web and mobile front-end modules (React and Flutter)
 - Implemented database schema 
@@ -279,11 +279,11 @@ list(
 ]
 ),
 list(
-  [Dependencies
+  [*Dependencies*
 - Test data and environment setup depends on finalized database
 - Test plan and test cases finalized
   ],
-  [Constraints
+  [*Constraints*
   - Availability of performance-test and security-test tools
 - Limited time for testing may constrain full regression coverage
 - Must follow project’s quality assurance and version control procedures
@@ -291,10 +291,10 @@ list(
 ]
 ),
 list(
-  [Deliverables
+  [*Deliverables*
 - Completed integration and system test reports
 - Signed-off User Acceptance Test report from stakeholders to be ready for deployment 
-  ],[Milestones
+  ],[*Milestones*
 - M5.1: Test plan and test cases developed and approved.
 - M5.2: System and integration tests executed successfully.
 - M5.3: User Acceptance Testing (UAT) completed and approved.
@@ -340,22 +340,22 @@ list(
 ]
   ),
   list(
-  [Dependencies
+  [*Dependencies*
 - Dependent on successful completion of testing 
   ],[
-Constraints
+*Constraints*
 - It must be scheduled 
 - Risk of configuration errors 
 - Security and data compliance must be checked and confirmed before the system goes live
 ]
   ),
   list(
-  [Deliverables
+  [*Deliverables*
 - Successfully deployed web and mobile applications
 - User training and support materials completed
 - Documented post-deployment review and lessons learned
 ],[
-Milestones
+*Milestones*
 - M6.1: Final stakeholder approval for production release obtained.
 - M6.2: Web and mobile applications deployed to production environment.
 - M6.3: User training sessions completed.
