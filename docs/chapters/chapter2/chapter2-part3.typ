@@ -46,11 +46,7 @@ list(
 - Approved project charter
 - Availability of key stakeholders for interviews such as the requesters and the facility managers
   ],
-<<<<<<< HEAD
-  [*Constraints*
-=======
   [Constraints
->>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
 
 - Budget constraints
 ]
@@ -101,19 +97,11 @@ list(
   [N/A]
 ),
 list(
-<<<<<<< HEAD
-  [*Dependencies*
-  
-  - Access to collaboration tools so the informations can be shared and reviewed.
-],
-  [*Constraints*
-=======
   [Dependencies
   
   - Access to collaboration tools so the informations can be shared and reviewed.
 ],
   [Constraints
->>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
   
   - Stakeholder time; limited availability may restrict depth of interviews
   - Data privacy when handaling the facility data
@@ -130,11 +118,7 @@ list(
 - Requirements validation report
 - Requirements Traceability Matrix
   ],
-<<<<<<< HEAD
-[*Milestones*
-=======
 [Milestones
->>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
 
 - M2.1: Software Requirements Specification (SRS) reviewed and approved by stakeholders.
 - M2.2: Requirements validation and traceability matrix completed.
@@ -240,11 +224,7 @@ list(
   [Dependencies
 - Depends on approved design phase deliverables auch as architecture, and database schema
   ],
-<<<<<<< HEAD
-[*Constraints*
-=======
 [Constraints
->>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
 - Follow the coding standards, security rules, and framework versions that were set in the earlier phases
 - Internet or cloud service interruptions may slow down integration and testing activities
 ]
@@ -299,19 +279,11 @@ list(
 ]
 ),
 list(
-<<<<<<< HEAD
-  [*Dependencies*
-- Test data and environment setup depends on finalized database
-- Test plan and test cases finalized
-  ],
-  [*Constraints*
-=======
   [Dependencies
 - Test data and environment setup depends on finalized database
 - Test plan and test cases finalized
   ],
   [Constraints
->>>>>>> a482d543c8f8cf6404948e586a75675471f2229b
   - Availability of performance-test and security-test tools
 - Limited time for testing may constrain full regression coverage
 - Must follow project’s quality assurance and version control procedures
@@ -392,3 +364,4 @@ Milestones
 ]
   ),
 ))
+#pagebreak()

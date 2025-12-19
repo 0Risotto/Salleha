@@ -1,5 +1,10 @@
 // Haneen
-== Use case diagram 
+== Use Case diagram 
+#show figure:set block(width:70%)
+#show figure.caption:set align(center)
+
+#show figure.caption:set block(width:100%)
+
 
 #figure(
   image(
@@ -7,6 +12,9 @@
 ),
   caption: [Use Case Diagram - All Users ]
 )<Use_Case_DiagramOne>
+
+#show figure:set block(width:50%)
+
 
 #figure(
   image(
@@ -31,6 +39,7 @@
 
 #pagebreak()
 
+#show figure:set block(width:100%)
 == Use Case descriptions
 #show figure: set block(breakable:true)
 #figure(

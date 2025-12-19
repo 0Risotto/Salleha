@@ -53,7 +53,7 @@ We updated and improved the requirements based on their comments and suggestions
 
 === How We Confirmed the Requirements Are Correct, Clear, and Complete
 
-We used two main methods to validate the clarity and correctness of the requirements: **Mockups** and **Walkthroughs**.
+We used two main methods to validate the clarity and correctness of the requirements: *Mockups* and *Walkthroughs*.
 
 ==== Method 1: Mockups
 
