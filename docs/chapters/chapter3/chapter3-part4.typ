@@ -245,7 +245,7 @@ columns: 2,
 [FR-16.2], [When changing status to "In Progress," the system shall record start time and expected completion time.],
 [FR-16.3], [When changing status to "Fixed," the system shall require: completion notes, actual resolution time, and optional images.],
 [FR-16.4], [Technicians shall be able to set a task to "On Hold" with reason codes: Waiting for Parts, Requires Specialist, Resident Not Available.],
-[FR-15.5], [The system shall automatically escalate tasks that remain "In Progress" beyond the estimated completion time.],
+[FR-16.5], [The system shall automatically escalate tasks that remain "In Progress" beyond the estimated completion time.],
 [FR-16.6], [Technicians shall be able to reassign tasks to other technicians with proper justification and administrator approval.],
 [FR-16.7], [All status changes shall be timestamped and recorded in the task history.],
 [FR-16.8], [The system shall notify the resident and administrator of significant status changes.]
