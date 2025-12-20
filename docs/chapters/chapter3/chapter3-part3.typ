@@ -1,13 +1,14 @@
 == Context Diagram
 #figure(
   image(
-"../../assets/chapter3/contextDiagram.png"
+"../../assets/chapter3/ContextDiagram.png"
 ),
   caption: [Context Diagram]
 )<Context_Diagram>
 
 // Haneen
-== Use Case diagram 
+== Use Case Model
+=== Use Case diagram 
 #show figure:set block(width:70%)
 #show figure.caption:set align(center)
 
@@ -48,7 +49,7 @@
 #pagebreak()
 
 #show figure:set block(width:100%)
-== Use Case descriptions
+=== Use Case descriptions
 #show figure: set block(breakable:true)
 #figure(
 table(

@@ -133,16 +133,25 @@ table.cell(colspan: 2,fill:rgb("#7EA6E0"))[*Regulatory Authorities*],
   ),caption:[External Stakeholder Interview]
 )
 
+#pagebreak()
 ==== Questionnaires
+#include "chapter3-part1-questionnaires.typ"
 
-#text(fill:red,size:50pt)[NOT DONE YET ]
- i will do it soon please dont kill me  lol
 ==== Document Analysis 
 In this project, we systematically reviewed a range of institutional maintenance-related documents to gain a deeper understanding of stakeholder needs. These included historical maintenance service records, internal workflow reports, facility management evaluations, and previous user feedback from residents, students, and staff. This analysis helped identify inefficiencies, recurring issues, and key areas for improvement within the existing maintenance process. Additionally, it enabled us to uncover implicit requirements not directly expressed by stakeholders, ensuring that the proposed application addresses operational, usability, and performance needs effectively.
 ==== Observation
 Based on the analysis of the questionnaire responses, it was observed that a significant number of participants expressed dissatisfaction with the current organization of maintenance services. Respondents frequently reported unclear reporting procedures, lack of prioritization, and delays caused by poor coordination between involved parties. Many users indicated that they often feel stressed or uncertain due to the absence of timely updates regarding the status of their requests. The findings suggest that implementing a centralized maintenance management system would improve organization, enhance transparency, and ensure continuous status updates. Such a system would reduce user stress, improve communication, and increase overall satisfaction by providing a more structured and reliable maintenance process.
 ==== Prototype
-#text(fill:red,size:50pt)[NOT DONE YET] will do it later after we are good  with the user requirements
+
+#include "chapter3-part1-prototypes.typ"
+
+
+
+
+
+
+
+
 == User Requirements
 #show figure: set block(breakable:true)
 #figure(
