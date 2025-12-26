@@ -19,28 +19,28 @@
 "../../assets/chapter4/DFD/dfdlevel1d2.png"
 ),
   caption: [DFD Level 1-Fragment 2]
-)<DFD_Level1F1>
+)<DFD_Level1F2>
 
 #figure(
   image(
 "../../assets/chapter4/DFD/level1D3.png"
 ),
   caption: [DFD Level 1-Fragment 3]
-)<DFD_Level1F1>
+)<DFD_Level1F3>
 
 #figure(
   image(
 "../../assets/chapter4/DFD/level1D4.png"
 ),
   caption: [DFD Level 1-Fragment 4]
-)<DFD_Level1F1>
+)<DFD_Level1F4>
 
 #figure(
   image(
 "../../assets/chapter4/DFD/level1D5.png"
 ),
   caption: [DFD Level 1-Fragment 5]
-)<DFD_Level1F1>
+)<DFD_Level1F5>
 
 
 == Data Dictionaries
