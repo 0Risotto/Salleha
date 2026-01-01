@@ -64,7 +64,7 @@ See @WaterfallSoftwareProcessModel.
     columns: 2,
     align: left,
     [*Category*],[*Description*],
-    [Backend Server],[ Personal laptops and PCs for developing both the web and mobile applications.],
+    [Developer Devices],[ Personal laptops and PCs for developing both the web and mobile applications.],
   [Database Server], [A server for hosting MySQL database, optimized for security and data backup.],
   [Testing Devices],[PCs for testing the website, and Android smartphones for mobile testing],
   ),
