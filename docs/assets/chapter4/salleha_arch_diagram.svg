@@ -1,0 +1,151 @@
+<svg viewBox="0 0 1200 1400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .layer-box { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .service-box { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .db-box { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .external-box { fill: #e8f5e9; stroke: #388e3c; stroke-width: 2; }
+      .gateway-box { fill: #fce4ec; stroke: #c2185b; stroke-width: 2; }
+      .title-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .subtitle-text { font-family: Arial, sans-serif; font-size: 14px; fill: #555; }
+      .small-text { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+      .line { stroke: #666; stroke-width: 2; fill: none; }
+      .arrow { fill: #666; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" class="arrow" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" class="title-text" text-anchor="middle" style="font-size: 20px; fill: #1976d2;">SALLEHA System Architecture</text>
+
+  <!-- PRESENTATION LAYER -->
+  <rect x="50" y="60" width="1100" height="180" class="layer-box" rx="5"/>
+  <text x="600" y="85" class="title-text" text-anchor="middle">PRESENTATION LAYER</text>
+  
+  <!-- Web Application -->
+  <rect x="100" y="100" width="450" height="120" class="service-box" rx="5"/>
+  <text x="325" y="125" class="subtitle-text" text-anchor="middle">Web Application (React)</text>
+  <text x="325" y="150" class="small-text" text-anchor="middle">• Resident Portal</text>
+  <text x="325" y="170" class="small-text" text-anchor="middle">• Technician Portal</text>
+  <text x="325" y="190" class="small-text" text-anchor="middle">• Admin Dashboard</text>
+  <text x="325" y="210" class="small-text" text-anchor="middle">HTML, Tailwind CSS, JavaScript</text>
+
+  <!-- Mobile Application -->
+  <rect x="650" y="100" width="450" height="120" class="service-box" rx="5"/>
+  <text x="875" y="125" class="subtitle-text" text-anchor="middle">Mobile Application (Flutter)</text>
+  <text x="875" y="150" class="small-text" text-anchor="middle">• Resident App</text>
+  <text x="875" y="170" class="small-text" text-anchor="middle">• Technician App</text>
+  <text x="875" y="190" class="small-text" text-anchor="middle">• Admin App</text>
+  <text x="875" y="210" class="small-text" text-anchor="middle">Flutter, Dart</text>
+
+  <!-- Connection lines from presentation to gateway -->
+  <line x1="325" y1="220" x2="400" y2="280" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="875" y1="220" x2="800" y2="280" class="line" marker-end="url(#arrowhead)"/>
+  <text x="600" y="260" class="small-text" text-anchor="middle">HTTPS / REST API</text>
+
+  <!-- API GATEWAY -->
+  <rect x="350" y="280" width="500" height="60" class="gateway-box" rx="5"/>
+  <text x="600" y="305" class="subtitle-text" text-anchor="middle">API GATEWAY / LOAD BALANCER</text>
+  <text x="600" y="325" class="small-text" text-anchor="middle">(Nginx)</text>
+
+  <!-- Connection from gateway to services -->
+  <line x1="600" y1="340" x2="250" y2="400" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="340" x2="600" y2="400" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="340" x2="950" y2="400" class="line" marker-end="url(#arrowhead)"/>
+
+  <!-- Top Row Services -->
+  <!-- Authentication Service -->
+  <rect x="80" y="400" width="200" height="80" class="service-box" rx="5"/>
+  <text x="180" y="425" class="subtitle-text" text-anchor="middle">Authentication</text>
+  <text x="180" y="445" class="subtitle-text" text-anchor="middle">Service</text>
+  <text x="180" y="465" class="small-text" text-anchor="middle">(Node.js)</text>
+
+  <!-- Maintenance Service -->
+  <rect x="500" y="400" width="200" height="80" class="service-box" rx="5"/>
+  <text x="600" y="425" class="subtitle-text" text-anchor="middle">Maintenance</text>
+  <text x="600" y="445" class="subtitle-text" text-anchor="middle">Service</text>
+  <text x="600" y="465" class="small-text" text-anchor="middle">(Node.js)</text>
+
+  <!-- Notification Service -->
+  <rect x="920" y="400" width="200" height="80" class="service-box" rx="5"/>
+  <text x="1020" y="425" class="subtitle-text" text-anchor="middle">Notification</text>
+  <text x="1020" y="445" class="subtitle-text" text-anchor="middle">Service</text>
+  <text x="1020" y="465" class="small-text" text-anchor="middle">(Node.js)</text>
+
+  <!-- Lines from top services to bottom services -->
+  <line x1="180" y1="480" x2="180" y2="540" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="480" x2="600" y2="540" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="1020" y1="480" x2="1020" y2="540" class="line" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom Row Services -->
+  <!-- User Management Service -->
+  <rect x="80" y="540" width="200" height="80" class="service-box" rx="5"/>
+  <text x="180" y="565" class="subtitle-text" text-anchor="middle">User Mgmt</text>
+  <text x="180" y="585" class="subtitle-text" text-anchor="middle">Service</text>
+  <text x="180" y="605" class="small-text" text-anchor="middle">(Node.js)</text>
+
+  <!-- Assignment Service -->
+  <rect x="500" y="540" width="200" height="80" class="service-box" rx="5"/>
+  <text x="600" y="565" class="subtitle-text" text-anchor="middle">Assignment</text>
+  <text x="600" y="585" class="subtitle-text" text-anchor="middle">Service</text>
+  <text x="600" y="605" class="small-text" text-anchor="middle">(Node.js)</text>
+
+  <!-- Analytics Service -->
+  <rect x="920" y="540" width="200" height="80" class="service-box" rx="5"/>
+  <text x="1020" y="565" class="subtitle-text" text-anchor="middle">Analytics</text>
+  <text x="1020" y="585" class="subtitle-text" text-anchor="middle">Service</text>
+  <text x="1020" y="605" class="small-text" text-anchor="middle">(Java/Spring)</text>
+
+  <!-- Lines from services to DAL -->
+  <line x1="180" y1="620" x2="400" y2="680" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="620" x2="600" y2="680" class="line" marker-end="url(#arrowhead)"/>
+  <line x1="1020" y1="620" x2="800" y2="680" class="line" marker-end="url(#arrowhead)"/>
+
+  <!-- Data Access Layer -->
+  <rect x="350" y="680" width="500" height="60" class="gateway-box" rx="5"/>
+  <text x="600" y="705" class="subtitle-text" text-anchor="middle">Data Access Layer</text>
+  <text x="600" y="725" class="small-text" text-anchor="middle">(ORM - Sequelize)</text>
+
+  <!-- Line from DAL to Database -->
+  <line x1="600" y1="740" x2="600" y2="800" class="line" marker-end="url(#arrowhead)"/>
+
+  <!-- DATABASE LAYER -->
+  <rect x="300" y="800" width="600" height="200" class="db-box" rx="5"/>
+  <text x="600" y="825" class="title-text" text-anchor="middle">DATABASE LAYER</text>
+  <text x="600" y="850" class="subtitle-text" text-anchor="middle">MySQL Database</text>
+  <text x="600" y="880" class="small-text" text-anchor="middle">• Users</text>
+  <text x="600" y="900" class="small-text" text-anchor="middle">• Technicians</text>
+  <text x="600" y="920" class="small-text" text-anchor="middle">• Maintenance_Requests</text>
+  <text x="600" y="940" class="small-text" text-anchor="middle">• Locations</text>
+  <text x="600" y="960" class="small-text" text-anchor="middle">• Maintenance_Schedules</text>
+  <text x="600" y="980" class="small-text" text-anchor="middle">• Notifications</text>
+
+  <!-- EXTERNAL SERVICES -->
+  <rect x="200" y="1070" width="800" height="270" class="external-box" rx="5"/>
+  <text x="600" y="1095" class="title-text" text-anchor="middle">EXTERNAL SERVICES</text>
+  <text x="600" y="1130" class="small-text" text-anchor="middle">• Email Service (SMTP / Nodemailer)</text>
+  <text x="600" y="1155" class="small-text" text-anchor="middle">• SMS Service (Twilio)</text>
+  <text x="600" y="1180" class="small-text" text-anchor="middle">• Push Notifications (Firebase Cloud Messaging)</text>
+  <text x="600" y="1205" class="small-text" text-anchor="middle">• Cloud Storage (AWS S3)</text>
+  <text x="600" y="1230" class="small-text" text-anchor="middle">• Redis Cache</text>
+  
+  <!-- Connection from services to external services -->
+  <line x1="1020" y1="480" x2="1020" y2="1070" class="line" stroke-dasharray="5,5"/>
+  <line x1="180" y1="620" x2="200" y2="1070" class="line" stroke-dasharray="5,5"/>
+
+  <!-- Legend -->
+  <rect x="50" y="1360" width="20" height="20" class="layer-box"/>
+  <text x="75" y="1375" class="small-text">Presentation/Gateway</text>
+  
+  <rect x="250" y="1360" width="20" height="20" class="service-box"/>
+  <text x="275" y="1375" class="small-text">Microservices</text>
+  
+  <rect x="450" y="1360" width="20" height="20" class="db-box"/>
+  <text x="475" y="1375" class="small-text">Database</text>
+  
+  <rect x="600" y="1360" width="20" height="20" class="external-box"/>
+  <text x="625" y="1375" class="small-text">External Services</text>
+</svg>
