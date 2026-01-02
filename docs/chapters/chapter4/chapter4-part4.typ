@@ -11,9 +11,13 @@
   caption: [Class Diagram]
 )<classdiagram>
 
-//orjoan
 === Sequence Diagrams
-
+    #for i in range(1, 29) {
+      figure(
+        image("../../assets/chapter4/seqdiagrams/fr" + str(i) + ".png"),
+        caption: [FR-#i Sequence Diagram]
+      )
+    }
 //shaima
 === Classes and Components Design
 
