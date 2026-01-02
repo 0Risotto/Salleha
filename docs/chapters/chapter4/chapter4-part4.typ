@@ -13,6 +13,7 @@
 
 //orjoan
 === Sequence Diagrams
+
 #figure(
   image("../../assets/chapter4/SequenceDiagrams/UserRegistrationSequenceDiagram.png"),
   caption: [User Registration Sequence Diagram]
