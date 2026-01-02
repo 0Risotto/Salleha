@@ -79,9 +79,34 @@
   caption: [Service Rankings Sequence Diagram]
 )
 
+#figure(
+  image("../../assets/chapter4/SequenceDiagrams/TicketAssignmentbyAdministrator.png"),
+  caption: [Ticket Assignment by Administrator Sequence Diagram]
+)
+
+#figure(
+  image("../../assets/chapter4/SequenceDiagrams/TechnicianTaskStatusUpdate.png"),
+  caption: [Technician Task Status Update Sequence Diagram]
+)
+Admin Dashboard & Analytics 
+#figure(
+  image("../../assets/chapter4/SequenceDiagrams/AdminDashboard&Analytics.png"),
+  caption: [Admin Dashboard & Analytics Sequence Diagram]
+)
+
+#figure(
+  image("../../assets/chapter4/SequenceDiagrams/DuplicateTicketDetection.png"),
+  caption: [Duplicate Ticket Detection Sequence Diagram]
+)
+
+#figure(
+  image("../../assets/chapter4/SequenceDiagrams/OverdueTicketManagement.png"),
+  caption: [Overdue Ticket Management Sequence Diagram]
+)
 
 //shaima
 === Classes and Components Design
+
 
 *Class Specifications*
 
