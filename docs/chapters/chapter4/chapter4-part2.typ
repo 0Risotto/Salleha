@@ -3,7 +3,7 @@
 == Object-Oriented Analysis
 
 === Activity Diagrams
-
+#show figure.where(kind:image) : set block(width :90%)
 #figure(
   image(
 "../../assets/chapter4/activityresident.drawio-1.svg"
