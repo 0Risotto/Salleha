@@ -3373,10 +3373,712 @@ END Process
 
 *Unresolved Issues:* None
 
+#pagebreak()
+
+
+=== Fragment 5: Notification Management Processes
+
+
+*Number:* 5.1 \
+*Name:* Receive Trigger \
+*Description:* Receives and validates notification triggers from various system processes (ticket creation, status changes, assignments, etc.) and prepares them for notification generation.
+
+*Input Data Flow:*
+- Notification triggers from various processes (2.1, 2.3, 2.4, 3.2, 4.1)
+  - Event Type
+  - TicketID
+  - Affected UserIDs
+  - Priority Level
+  - Timestamp
+
+*Output Data Flow:*
+- Notification Trigger Details (to Process 5.2)
+
+*Type of Process:* \
+☑ Online  ☐ Batch  ☐ Manual
+
+*Subprogram/Function Name:* `receiveTrigger()`
+
+*Process Logic (Structured English):*
+
+```
+BEGIN Process 5.1: Receive Trigger
+
+READ Trigger Event from Source Process
+    Event Type, TicketID, Affected UserIDs, Additional Data
+
+VALIDATE Trigger Data
+IF Event Type is NULL OR TicketID is NULL THEN
+    LOG "Invalid trigger received"
+    EXIT Process
+ENDIF
+
+// Determine affected users based on event type
+INITIALIZE Recipients List
+
+IF Event Type = "Ticket Created" THEN
+    ADD All Active Administrators to Recipients
+ELSIF Event Type = "Status Changed" THEN
+    RETRIEVE Ticket from Tickets Database (D2)
+    ADD Ticket.RequesterID to Recipients
+    IF Ticket.TechnicianID ≠ NULL THEN
+        ADD Ticket.TechnicianID to Recipients
+    ENDIF
+ELSIF Event Type = "Ticket Assigned" THEN
+    RETRIEVE Ticket from Tickets Database (D2)
+    ADD Ticket.TechnicianID to Recipients
+    ADD Ticket.RequesterID to Recipients
+ELSIF Event Type = "Priority Changed" THEN
+    RETRIEVE Ticket from Tickets Database (D2)
+    IF Ticket.TechnicianID ≠ NULL THEN
+        ADD Ticket.TechnicianID to Recipients
+    ENDIF
+    ADD All Active Administrators to Recipients
+ELSIF Event Type = "Comment Added" THEN
+    RETRIEVE Ticket from Tickets Database (D2)
+    ADD Ticket.RequesterID to Recipients
+    IF Ticket.TechnicianID ≠ NULL THEN
+        ADD Ticket.TechnicianID to Recipients
+    ENDIF
+ELSIF Event Type = "Evidence Uploaded" THEN
+    RETRIEVE Ticket from Tickets Database (D2)
+    ADD Ticket.RequesterID to Recipients
+    ADD All Active Administrators to Recipients
+ELSIF Event Type = "Ticket Overdue" THEN
+    ADD All Active Administrators to Recipients
+    RETRIEVE Ticket from Tickets Database (D2)
+    IF Ticket.TechnicianID ≠ NULL THEN
+        ADD Ticket.TechnicianID to Recipients
+    ENDIF
+ENDIF
+
+// Remove duplicate user IDs
+REMOVE Duplicates from Recipients List
+
+// Determine notification priority
+IF Event Type IN ("Ticket Overdue", "Emergency Ticket", "Account Locked") THEN
+    SET Priority Level = "High"
+ELSIF Event Type IN ("Status Changed", "Priority Changed", "Ticket Assigned") THEN
+    SET Priority Level = "Medium"
+ELSE
+    SET Priority Level = "Low"
+ENDIF
+
+// Create trigger details object
+CREATE Trigger Details Object
+    TriggerID = GENERATE UUID
+    EventType = Event Type
+    TicketID = TicketID
+    Recipients = Recipients List
+    PriorityLevel = Priority Level
+    Timestamp = CURRENT_DATETIME
+    AdditionalData = Additional Data
+
+LOG "Notification trigger received: " + Event Type + " for Ticket " + TicketID
+
+// Pass to notification preparation
+TRIGGER Process 5.2 (Prepare Notification)
+    Pass Trigger Details Object
+
+END Process
+```
+
+*Refer to:*
+- Table 91: Data Flow 41 Details
+- Figure 44: DFD Level 1-Fragment 5
+
+*Decision Table:*
+
+#figure(
+  table(
+    columns: 6,
+    align: (left, center, center, center, center, center),
+    stroke: 0.5pt,
+    [*Conditions*], [*Rule 1*], [*Rule 2*], [*Rule 3*], [*Rule 4*], [*Rule 5*],
+    [Event Type Valid], [Y], [Y], [Y], [Y], [N],
+    [TicketID Provided], [Y], [Y], [Y], [N], [-],
+    [Event = Ticket Created], [Y], [N], [N], [-], [-],
+    [Event = Status Changed], [N], [Y], [N], [-], [-],
+    [Event = Ticket Assigned], [N], [N], [Y], [-], [-],
+    [Identify Recipients], [X], [X], [X], [-], [-],
+    [Set Priority Level], [X], [X], [X], [-], [-],
+    [Create Trigger Object], [X], [X], [X], [-], [-],
+    [Pass to Process 5.2], [X], [X], [X], [-], [-],
+    [Display "Invalid TicketID"], [-], [-], [-], [X], [-],
+    [Display "Invalid Event Type"], [-], [-], [-], [-], [X],
+  )
+)
+
+*Unresolved Issues:* None
+
+
+*Number:* 5.2 \
+*Name:* Prepare Notification \
+*Description:* Retrieves ticket details and user contact information, constructs personalized notification messages, and determines delivery methods based on user preferences.
+
+*Input Data Flow:*
+- Notification Trigger Details (from Process 5.1)
+- Ticket Details (from Tickets Database D2)
+- User Contact Information (from User Database D1)
+
+*Output Data Flow:*
+- Prepared Notification Message (to Process 5.3)
+
+*Type of Process:* \
+☑ Online  ☐ Batch  ☐ Manual
+
+*Subprogram/Function Name:* `prepareNotification()`
+
+*Process Logic (Structured English):*
+
+```
+BEGIN Process 5.2: Prepare Notification
+
+READ Trigger Details from Process 5.1
+    TriggerID, EventType, TicketID, Recipients, PriorityLevel, Timestamp
+
+// Retrieve ticket information
+QUERY Tickets Database (D2) WHERE TicketID = Input TicketID
+IF Ticket Not Found THEN
+    LOG "Ticket not found for notification: " + TicketID
+    EXIT Process
+ENDIF
+
+RETRIEVE Ticket Details
+    Title, Category, Status, Priority, Location, RequesterID, TechnicianID
+
+// Retrieve location details for context
+IF Ticket.LocationID ≠ NULL THEN
+    QUERY Locations Database WHERE LocationID = Ticket.LocationID
+    SET Location Details = BuildingName + " - " + RoomNumber
+ELSE
+    SET Location Details = "Unspecified"
+ENDIF
+
+// Process notifications for each recipient
+FOR EACH RecipientID in Recipients List DO
+
+    // Retrieve recipient information
+    QUERY User Database (D1) WHERE UserID = RecipientID
+    IF User Not Found THEN
+        LOG "User not found: " + RecipientID
+        CONTINUE to Next Recipient
+    ENDIF
+    
+    RETRIEVE User Details
+        FullName, Email, PhoneNumber, Role
+    
+    // Retrieve notification preferences
+    QUERY Notification Preferences WHERE UserID = RecipientID
+    IF Preferences Not Found THEN
+        // Use default preferences
+        SET InAppEnabled = TRUE
+        SET EmailEnabled = TRUE
+        SET SMSEnabled = FALSE
+        SET PushEnabled = TRUE
+    ELSE
+        RETRIEVE Preferences
+            InAppEnabled, EmailEnabled, SMSEnabled, PushEnabled,
+            DoNotDisturbStart, DoNotDisturbEnd
+    ENDIF
+    
+    // Check Do Not Disturb settings
+    SET Current Time = CURRENT_TIME
+    IF DoNotDisturbStart ≠ NULL AND DoNotDisturbEnd ≠ NULL THEN
+        IF Current Time BETWEEN DoNotDisturbStart AND DoNotDisturbEnd THEN
+            IF PriorityLevel ≠ "High" THEN
+                LOG "User " + RecipientID + " in Do Not Disturb mode"
+                QUEUE Notification for Later Delivery
+                CONTINUE to Next Recipient
+            ENDIF
+        ENDIF
+    ENDIF
+    
+    // Build notification message based on event type and user role
+    INITIALIZE Message = ""
+    INITIALIZE Subject = ""
+    
+    IF EventType = "Ticket Created" THEN
+        SET Subject = "New Maintenance Ticket Created"
+        SET Message = "A new maintenance ticket has been submitted."
+        SET Details = "Ticket ID: " + TicketID + "\n" +
+                     "Title: " + Ticket.Title + "\n" +
+                     "Category: " + Ticket.Category + "\n" +
+                     "Location: " + Location Details + "\n" +
+                     "Priority: " + Ticket.Priority
+    
+    ELSIF EventType = "Status Changed" THEN
+        SET Subject = "Ticket Status Updated"
+        IF User.Role = "Resident" THEN
+            SET Message = "Your maintenance ticket status has been updated to: " + 
+                         Ticket.Status
+        ELSE
+            SET Message = "Ticket " + TicketID + " status changed to: " + Ticket.Status
+        ENDIF
+        SET Details = "Ticket ID: " + TicketID + "\n" +
+                     "New Status: " + Ticket.Status + "\n" +
+                     "Location: " + Location Details
+    
+    ELSIF EventType = "Ticket Assigned" THEN
+        SET Subject = "New Task Assigned"
+        IF User.Role = "Technician" THEN
+            SET Message = "A new maintenance task has been assigned to you."
+            SET Details = "Ticket ID: " + TicketID + "\n" +
+                         "Title: " + Ticket.Title + "\n" +
+                         "Category: " + Ticket.Category + "\n" +
+                         "Priority: " + Ticket.Priority + "\n" +
+                         "Location: " + Location Details
+        ELSE
+            SET Message = "Your ticket has been assigned to a technician."
+            SET Details = "Ticket ID: " + TicketID
+        ENDIF
+    
+    ELSIF EventType = "Priority Changed" THEN
+        SET Subject = "Ticket Priority Updated"
+        SET Message = "The priority of ticket " + TicketID + 
+                     " has been changed to: " + Ticket.Priority
+        SET Details = "Ticket ID: " + TicketID + "\n" +
+                     "New Priority: " + Ticket.Priority + "\n" +
+                     "Location: " + Location Details
+    
+    ELSIF EventType = "Comment Added" THEN
+        SET Subject = "New Comment on Your Ticket"
+        SET Message = "A new comment has been added to your maintenance ticket."
+        SET Details = "Ticket ID: " + TicketID + "\n" +
+                     "Status: " + Ticket.Status
+    
+    ELSIF EventType = "Evidence Uploaded" THEN
+        SET Subject = "Maintenance Evidence Submitted"
+        IF User.Role = "Resident" THEN
+            SET Message = "The technician has uploaded completion evidence for your ticket."
+        ELSE
+            SET Message = "Completion evidence has been uploaded for ticket " + TicketID
+        ENDIF
+        SET Details = "Ticket ID: " + TicketID + "\n" +
+                     "Please review the evidence."
+    
+    ELSIF EventType = "Ticket Overdue" THEN
+        SET Subject = "URGENT: Ticket Overdue"
+        SET Message = "Ticket " + TicketID + " is overdue and requires immediate attention."
+        SET Details = "Ticket ID: " + TicketID + "\n" +
+                     "Category: " + Ticket.Category + "\n" +
+                     "Priority: " + Ticket.Priority + "\n" +
+                     "Location: " + Location Details
+    ENDIF
+    
+    // Determine notification type for database
+    IF EventType = "Ticket Created" OR EventType = "Ticket Overdue" THEN
+        SET NotificationType = "Alert"
+    ELSIF EventType = "Ticket Assigned" THEN
+        SET NotificationType = "Assignment"
+    ELSIF EventType = "Priority Changed" THEN
+        SET NotificationType = "PriorityChange"
+    ELSE
+        SET NotificationType = "StatusChange"
+    ENDIF
+    
+    // Check for notification grouping (last 10 minutes)
+    QUERY Notifications Database WHERE
+        UserID = RecipientID AND
+        RelatedTicketID = TicketID AND
+        NotificationType = NotificationType AND
+        CreatedAt >= (CURRENT_DATETIME - 10 minutes) AND
+        IsRead = FALSE
+    
+    IF Similar Unread Notification Exists THEN
+        // Update existing notification instead of creating new
+        SET GroupedNotification = TRUE
+        UPDATE Existing Notification
+            Message = "Multiple updates for ticket " + TicketID
+            UpdatedAt = CURRENT_DATETIME
+    ELSE
+        SET GroupedNotification = FALSE
+    ENDIF
+    
+    // Generate notification ID
+    GENERATE NotificationID
+    
+    // Create prepared notification object
+    CREATE Prepared Notification
+        NotificationID = NotificationID
+        UserID = RecipientID
+        UserName = User.FullName
+        UserEmail = User.Email
+        UserPhone = User.PhoneNumber
+        UserRole = User.Role
+        RelatedTicketID = TicketID
+        NotificationType = NotificationType
+        Subject = Subject
+        Message = Message
+        Details = Details
+        PriorityLevel = PriorityLevel
+        DeliveryMethods = {
+            InApp: InAppEnabled,
+            Email: EmailEnabled,
+            SMS: SMSEnabled,
+            Push: PushEnabled
+        }
+        IsGrouped = GroupedNotification
+        CreatedAt = CURRENT_DATETIME
+        ExpirationDate = CURRENT_DATETIME + 90 days
+    
+    LOG "Notification prepared for User " + RecipientID + " - " + EventType
+    
+    // Send to delivery process
+    TRIGGER Process 5.3 (Send Notification)
+        Pass Prepared Notification Object
+
+ENDFOR
+
+END Process
+```
+
+*Refer to:*
+- Table 92-96: Data Flow 42-46 Details
+- FR-10 (Status Change Notifications)
+- FR-18 (Technician Notifications)
+- FR-25 (Administrator Notifications)
+
+*Decision Table:*
+
+#figure(
+  table(
+    columns: 7,
+    align: (left, center, center, center, center, center, center),
+    stroke: 0.5pt,
+    [*Conditions*], [*Rule 1*], [*Rule 2*], [*Rule 3*], [*Rule 4*], [*Rule 5*], [*Rule 6*],
+    [Ticket Found], [Y], [Y], [Y], [Y], [Y], [N],
+    [User Found], [Y], [Y], [Y], [Y], [N], [-],
+    [In DND Mode], [Y], [Y], [N], [N], [-], [-],
+    [Priority = High], [Y], [N], [-], [-], [-], [-],
+    [Recent Similar Notification], [-], [-], [Y], [N], [-], [-],
+    [Retrieve Preferences], [X], [X], [X], [X], [-], [-],
+    [Build Message], [X], [X], [X], [X], [-], [-],
+    [Override DND], [X], [-], [-], [-], [-], [-],
+    [Queue for Later], [-], [X], [-], [-], [-], [-],
+    [Group Notification], [-], [-], [X], [-], [-], [-],
+    [Create New Notification], [X], [-], [-], [X], [-], [-],
+    [Send to Process 5.3], [X], [-], [X], [X], [-], [-],
+    [Log "User Not Found"], [-], [-], [-], [-], [X], [-],
+    [Log "Ticket Not Found"], [-], [-], [-], [-], [-], [X],
+  )
+)
+
+*Unresolved Issues:* None
+
+
+*Number:* 5.3 \
+*Name:* Send Notification \
+*Description:* Delivers notifications to users through multiple channels (in-app, email, SMS, push notifications) based on user preferences and priority levels.
+
+*Input Data Flow:*
+- Prepared Notification Message (from Process 5.2)
+
+*Output Data Flow:*
+- Notification (to Resident/Technician/Administrator)
+- Stored Notification Record (to Notifications Database)
+
+*Type of Process:* \
+☑ Online  ☐ Batch  ☐ Manual
+
+*Subprogram/Function Name:* `sendNotification()`
+
+*Process Logic (Structured English):*
+
+```
+BEGIN Process 5.3: Send Notification
+
+READ Prepared Notification from Process 5.2
+    NotificationID, UserID, UserName, UserEmail, UserPhone, UserRole,
+    RelatedTicketID, NotificationType, Subject, Message, Details,
+    PriorityLevel, DeliveryMethods, IsGrouped, CreatedAt, ExpirationDate
+
+// Store notification in database first
+CREATE Notification Record
+    NotificationID = NotificationID
+    UserID = UserID
+    RelatedTicketID = RelatedTicketID
+    NotificationType = NotificationType
+    Message = Message
+    IsRead = FALSE
+    DeliveryMethod = "multi-channel"
+    PriorityLevel = PriorityLevel
+    ExpirationDate = ExpirationDate
+    CreatedAt = CreatedAt
+
+WRITE Notification Record to Notifications Database
+
+LOG "Notification " + NotificationID + " stored for User " + UserID
+
+// Track delivery status for each channel
+INITIALIZE Delivery Status = {
+    InApp: FALSE,
+    Email: FALSE,
+    SMS: FALSE,
+    Push: FALSE
+}
+
+// ============================================
+// CHANNEL 1: IN-APP NOTIFICATION
+// ============================================
+
+IF DeliveryMethods.InApp = TRUE THEN
+    TRY
+        // Check if user has active session
+        QUERY Active Sessions WHERE UserID = UserID
+        
+        IF Active Session Exists THEN
+            // Send via WebSocket
+            CREATE WebSocket Payload
+                type: "notification"
+                notificationID: NotificationID
+                ticketID: RelatedTicketID
+                subject: Subject
+                message: Message
+                priority: PriorityLevel
+                timestamp: CreatedAt
+            
+            SEND WebSocket Message to User Session
+            
+            // Update notification badge count
+            INCREMENT User.NotificationBadgeCount
+            SEND Badge Update via WebSocket
+            
+            // Play sound for high priority
+            IF PriorityLevel = "High" THEN
+                SEND Sound Trigger "urgent.mp3"
+            ELSE
+                SEND Sound Trigger "notification.mp3"
+            ENDIF
+            
+            SET Delivery Status.InApp = TRUE
+            LOG "In-app notification sent to User " + UserID
+        ELSE
+            LOG "No active session for User " + UserID + " - notification queued"
+        ENDIF
+    
+    CATCH Error
+        LOG "In-app notification failed: " + Error.Message
+        SET Delivery Status.InApp = FALSE
+    ENDTRY
+ENDIF
+
+// ============================================
+// CHANNEL 2: EMAIL NOTIFICATION
+// ============================================
+
+IF DeliveryMethods.Email = TRUE THEN
+    IF UserEmail ≠ NULL AND UserEmail ≠ "" THEN
+        TRY
+            // Build HTML email template
+            CREATE Email Content
+                To: UserEmail
+                Subject: "[SALLEHA] " + Subject
+                
+                Body (HTML):
+                    <html>
+                    <body style="font-family: Arial, sans-serif;">
+                        <div style="background: #f5f5f5; padding: 20px;">
+                            <div style="background: white; padding: 20px; border-radius: 8px;">
+                                <h2 style="color: #333;">Hello, {UserName}</h2>
+                                <p>{Message}</p>
+                                <div style="background: #f9f9f9; padding: 15px; margin: 15px 0;">
+                                    <pre style="margin: 0;">{Details}</pre>
+                                </div>
+                                <a href="https://salleha.system.com/tickets/{RelatedTicketID}" 
+                                   style="display: inline-block; background: #007bff; 
+                                          color: white; padding: 10px 20px; 
+                                          text-decoration: none; border-radius: 5px;">
+                                    View Ticket
+                                </a>
+                                <hr style="margin: 20px 0;">
+                                <p style="font-size: 12px; color: #666;">
+                                    You are receiving this notification because you have 
+                                    email notifications enabled. 
+                                    <a href="https://salleha.system.com/preferences">
+                                        Manage your notification preferences
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </body>
+                    </html>
+            
+            // Send email via Nodemailer
+            SEND Email via SMTP
+                Service: Gmail SMTP / SendGrid / AWS SES
+                From: "SALLEHA System <no-reply@salleha.system.com>"
+                
+            SET Delivery Status.Email = TRUE
+            LOG "Email sent to " + UserEmail
+            
+        CATCH Error
+            LOG "Email delivery failed: " + Error.Message
+            SET Delivery Status.Email = FALSE
+        ENDTRY
+    ELSE
+        LOG "No email address for User " + UserID
+    ENDIF
+ENDIF
+
+// ============================================
+// CHANNEL 3: SMS NOTIFICATION
+// ============================================
+
+IF DeliveryMethods.SMS = TRUE THEN
+    IF PriorityLevel = "High" OR PriorityLevel = "Immediate" THEN
+        IF UserPhone ≠ NULL AND UserPhone ≠ "" THEN
+            TRY
+                // Build SMS message (max 160 characters)
+                SET SMS Text = "SALLEHA ALERT: " + Message
+                IF LENGTH(SMS Text) > 140 THEN
+                    SET SMS Text = SUBSTRING(SMS Text, 0, 137) + "..."
+                ENDIF
+                
+                // Add short URL
+                GENERATE Short URL for Ticket
+                    FullURL: "https://salleha.system.com/tickets/" + RelatedTicketID
+                    ShortURL: "https://slh.tk/t/" + RelatedTicketID
+                
+                SET SMS Text = SMS Text + " View: " + ShortURL
+                
+                // Send via Twilio API
+                SEND SMS via Twilio
+                    To: UserPhone
+                    From: Configured Twilio Number
+                    Body: SMS Text
+                
+                SET Delivery Status.SMS = TRUE
+                LOG "SMS sent to " + UserPhone
+                
+            CATCH Error
+                LOG "SMS delivery failed: " + Error.Message
+                SET Delivery Status.SMS = FALSE
+            ENDTRY
+        ELSE
+            LOG "No phone number for User " + UserID
+        ENDIF
+    ELSE
+        LOG "SMS only sent for high priority notifications"
+    ENDIF
+ENDIF
+
+// ============================================
+// CHANNEL 4: PUSH NOTIFICATION (Mobile App)
+// ============================================
+
+IF DeliveryMethods.Push = TRUE THEN
+    TRY
+        // Check if user has FCM token (mobile app installed)
+        QUERY Firebase Tokens WHERE UserID = UserID
+        
+        IF FCM Token Exists THEN
+            // Build push notification payload
+            CREATE Push Notification
+                to: User.FCMToken
+                notification:
+                    title: Subject
+                    body: Message
+                    sound: (PriorityLevel = "High" ? "urgent.mp3" : "default.mp3")
+                    badge: User.NotificationBadgeCount + 1
+                    icon: "ic_notification"
+                    color: "#007bff"
+                data:
+                    type: NotificationType
+                    ticketID: RelatedTicketID
+                    notificationID: NotificationID
+                    priority: PriorityLevel
+                    deepLink: "salleha://tickets/" + RelatedTicketID
+            
+            // Send via Firebase Cloud Messaging
+            SEND Push Notification via FCM API
+            
+            SET Delivery Status.Push = TRUE
+            LOG "Push notification sent to User " + UserID
+        ELSE
+            LOG "No FCM token for User " + UserID + " - mobile app not installed"
+        ENDIF
+        
+    CATCH Error
+        LOG "Push notification failed: " + Error.Message
+        SET Delivery Status.Push = FALSE
+    ENDTRY
+ENDIF
+
+// ============================================
+// UPDATE DELIVERY STATUS
+// ============================================
+
+// Store delivery attempts
+CREATE Delivery Log Record
+    NotificationID = NotificationID
+    InAppDelivered = Delivery Status.InApp
+    EmailDelivered = Delivery Status.Email
+    SMSDelivered = Delivery Status.SMS
+    PushDelivered = Delivery Status.Push
+    AttemptedAt = CURRENT_DATETIME
+
+WRITE to Delivery Log Table
+
+// Check if at least one channel succeeded
+SET Success Count = 0
+IF Delivery Status.InApp = TRUE THEN INCREMENT Success Count
+IF Delivery Status.Email = TRUE THEN INCREMENT Success Count
+IF Delivery Status.SMS = TRUE THEN INCREMENT Success Count
+IF Delivery Status.Push = TRUE THEN INCREMENT Success Count
+
+IF Success Count = 0 THEN
+    // All channels failed - queue for retry
+    LOG "WARNING: All notification channels failed for " + NotificationID
+    CREATE Retry Job
+        NotificationID = NotificationID
+        RetryAt = CURRENT_DATETIME + 5 minutes
+        RetryCount = 1
+    WRITE to Notification Retry Queue
+ELSE
+    LOG "Notification " + NotificationID + " delivered via " + Success Count + " channel(s)"
+ENDIF
+
+// Send success response
+DISPLAY "Notification sent successfully"
+
+END Process
+```
+
+*Refer to:*
+- Table 97-98: Data Flow 47 Details
+- FR-10 (Status Change Notifications)
+- FR-18 (Technician Notifications)
+- FR-25 (Administrator Notifications)
+
+*Decision Table:*
+
+#figure(
+  table(
+    columns: 7,
+    align: (left, center, center, center, center, center, center),
+    stroke: 0.5pt,
+    [*Conditions*], [*Rule 1*], [*Rule 2*], [*Rule 3*], [*Rule 4*], [*Rule 5*], [*Rule 6*],
+    [In-App Enabled], [Y], [Y], [Y], [N], [N], [N],
+    [Email Enabled], [Y], [Y], [N], [Y], [Y], [N],
+    [SMS Enabled], [Y], [N], [N], [Y], [N], [N],
+    [Priority = High], [Y], [Y], [Y], [Y], [N], [-],
+    [Send In-App], [X], [X], [X], [-], [-], [-],
+    [Send Email], [X], [X], [-], [X], [X], [-],
+    [Send SMS], [X], [-], [-], [X], [-], [-],
+    [Send Push], [X], [X], [X], [X], [X], [-],
+    [Store in Database], [X], [X], [X], [X], [X], [X],
+    [Log Delivery], [X], [X], [X], [X], [X], [X],
+    [Queue for Retry (if all fail)], [-], [-], [-], [-], [-], [X],
+  )
+)
+
+*Unresolved Issues:* None
+
 
 === Summary of All Process Specifications
 
-This document contains *13 comprehensive process specifications* covering all major system processes:
+This document contains *20 comprehensive process specifications* covering all major system processes:
 
 *Fragment 1: User Management* (4 Processes)
 1. *1.1 User Registration* - Account creation with validation and email verification
@@ -3397,8 +4099,13 @@ This document contains *13 comprehensive process specifications* covering all ma
 12. *3.3 Notify Technician* - Send assignment notifications to technicians
 13. *3.4 Update Assignment Status* - Handle accept/decline and reassignment
 
- *Fragment 4: Analytics & Reporting* (4 Processes - 2 detailed above)
+ *Fragment 4: Analytics & Reporting* (4 Processes)
 14. *4.1 Record Maintenance Completion* - Archive completed work with metrics
 15. *4.2 Update Maintenance History* - Store historical records for analysis
 16. *4.3 Generate Reports & Metrics* - Compile data and calculate KPIs
 17. *4.4 Provide Analytics Dashboard / Export* - Display dashboards and export reports
+
+*Fragment 5: Notification Management* (3 Processes)
+18. *5.1 Receive Trigger* - Capture notification events and identify affected users
+19. *5.2 Prepare Notification* - Construct personalized messages with ticket context
+20. *5.3 Send Notification* - Deliver via multiple channels (in-app, email, SMS, push)
