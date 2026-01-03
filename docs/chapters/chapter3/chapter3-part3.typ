@@ -15,12 +15,7 @@
 #show figure.caption:set block(width:100%)
 
 
-#figure(
-  image(
-"../../assets/chapter3/ucd1.png"
-),
-  caption: [Use Case Diagram - All Users ]
-)<Use_Case_DiagramOne>
+
 
 #show figure:set block(width:50%)
 

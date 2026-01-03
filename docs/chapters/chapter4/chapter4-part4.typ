@@ -11,99 +11,13 @@
   caption: [Class Diagram]
 )<classdiagram>
 
-//orjoan
 === Sequence Diagrams
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/UserRegistrationSequenceDiagram.png"),
-  caption: [User Registration Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/LoginSequnaceDigram.png"),
-  caption: [Login Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/LogoutSequnaceDigram.png"),
-  caption: [Logout Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/ForgetPasswordSequnaceDigram.png"),
-  caption: [Forget Password Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/AccountUpdateSequenceDiagram.png"),
-  caption: [Account Update Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/User FeedbackSubmissionSequnaceDigram.png"),
-  caption: [User Feedback Submission Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/FeedbackViewingSequenceDiagram.png"),
-  caption: [Feedback Viewing Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/NotificationSystemSequenceDiagram.png"),
-  caption: [Notification System Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/UserNavigationSequenceDiagram.png"),
-  caption: [User Navigation Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/MaintenanceSubmissionSequenceDiagram.png"),
-  caption: [Maintenance Submission Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/IssueTrackingSequenceDiagram.png"),
-  caption: [Issue Tracking Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/SubmissionStatisticsSequenceDiagram.png"),
-  caption: [Submission Statistics Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/ServiceRankingsSequenceDiagram.png"),
-  caption: [Service Rankings Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/TicketAssignmentbyAdministrator.png"),
-  caption: [Ticket Assignment by Administrator Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/TechnicianTaskStatusUpdate.png"),
-  caption: [Technician Task Status Update Sequence Diagram]
-)
-Admin Dashboard & Analytics 
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/AdminDashboard&Analytics.png"),
-  caption: [Admin Dashboard & Analytics Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/DuplicateTicketDetection.png"),
-  caption: [Duplicate Ticket Detection Sequence Diagram]
-)
-
-#figure(
-  image("../../assets/chapter4/SequenceDiagrams/OverdueTicketManagement.png"),
-  caption: [Overdue Ticket Management Sequence Diagram]
-)
-
+    #for i in range(1, 29) {
+      figure(
+        image("../../assets/chapter4/seqdiagrams/fr" + str(i) + ".png"),
+        caption: [FR-#i Sequence Diagram]
+      )
+    }
 //shaima
 === Classes and Components Design
 
@@ -454,16 +368,25 @@ Entry Actions:
 - Interfaces: IFileStorageService, IEvidenceRepository.
 
 *9. System configuration and rules engine component*
-
 - Dependencies: Data access layer.
 - Provides: Priority rules, assignment automation policies (Auto-assign), notification thresholds, system configuration settings.
 - Interfaces: IConfigurationService, IRuleEngine.
 
 *Component Design Diagram*
-
 #figure(
-  image(
+  box(
+ width: 100%,
+    height: 90%,
+ align(center,
+      rotate(90deg,
+    
+
+    image(
 "../../assets/chapter4/componentdiagram.svg"
-),
+,
+ width: 140%,
+          height: 100%,
+          fit: "contain",
+)))),
   caption: [Component Diagram]
 )<componentdiagram>
