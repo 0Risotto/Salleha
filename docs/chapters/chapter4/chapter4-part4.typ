@@ -367,16 +367,25 @@ Entry Actions:
 - Interfaces: IFileStorageService, IEvidenceRepository.
 
 *9. System configuration and rules engine component*
-
 - Dependencies: Data access layer.
 - Provides: Priority rules, assignment automation policies (Auto-assign), notification thresholds, system configuration settings.
 - Interfaces: IConfigurationService, IRuleEngine.
 
 *Component Design Diagram*
-
 #figure(
-  image(
+  box(
+ width: 100%,
+    height: 90%,
+ align(center,
+      rotate(90deg,
+    
+
+    image(
 "../../assets/chapter4/componentdiagram.svg"
-),
+,
+ width: 140%,
+          height: 100%,
+          fit: "contain",
+)))),
   caption: [Component Diagram]
 )<componentdiagram>
