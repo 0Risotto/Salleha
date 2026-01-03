@@ -43,18 +43,30 @@ Attributes:
 - sessionToken: String (private)
 - registrationDate: DateTime (private)
 Methods:
-+ register(fullName: String, email: String, nationalID: String, username: String, password: String, role: String): Boolean
-+ login(username: String, password: String, captcha: String): Boolean
-+ logout(): Boolean
-+ resetPassword(email: String, nationalID: String): Boolean
-+ verifyEmail(token: String): Boolean
-+ updateProfile(fullName: String, email: String, password: String): Boolean
-- isAccountLocked(): Boolean
-- validateCredentials(): Boolean
-- hashPassword(password: String): String
-- validatePasswordStrength(password: String): Boolean
-- incrementFailedLoginAttempts(): void
-- resetFailedLoginAttempts(): void
+\
+\+ register(fullName: String, email: String, nationalID: String, username: String, password: String, role: String): Boolean
+\
+\+ login(username: String, password: String, captcha: String): Boolean
+\
+\+ logout(): Boolean
+\
+\+ resetPassword(email: String, nationalID: String): Boolean
+\
+\+ verifyEmail(token: String): Boolean
+\
+\+ updateProfile(fullName: String, email: String, password: String): Boolean
+\
+\- isAccountLocked(): Boolean
+\
+\- validateCredentials(): Boolean
+\
+\- hashPassword(password: String): String
+\
+\- validatePasswordStrength(password: String): Boolean
+\
+\- incrementFailedLoginAttempts(): void
+\
+\- resetFailedLoginAttempts(): void
 
 Responsibilities:
 - Handle user registration, authentication, and session management
@@ -68,12 +80,18 @@ Attributes:
 - profilePictureURL: String (private)
 
 Methods:
-+ submitMaintenanceRequest(category: String, description: String, locationID: String, priority: String, images: List): String
-+ viewDashboard(): void
-+ viewTicketStatus(ticketID: String): String
-+ addTicketComment(ticketID: String, comment: String): Boolean
-+ markTicketAsUrgent(ticketID: String): Boolean
-+ configureNotificationPreferences(): void
+\
+\+ submitMaintenanceRequest(category: String, description: String, locationID: String, priority: String, images: List): String
+\
+\+ viewDashboard(): void
+\
+\+ viewTicketStatus(ticketID: String): String
+\
+\+ addTicketComment(ticketID: String, comment: String): Boolean
+\
+\+ markTicketAsUrgent(ticketID: String): Boolean
+\
+\+ configureNotificationPreferences(): void
 
 Responsibilities:
 - Submit and track maintenance requests
@@ -94,13 +112,20 @@ Attributes:
 - customerSatisfactionRating: Double (private)
 
 Methods:
-+ viewAssignedTasks(): List
-+ acceptTask(ticketID: String): Boolean
-+ declineTask(ticketID: String, reason: String): Boolean
-+ updateTaskStatus(ticketID: String, status: String): Boolean
-+ uploadMaintenanceEvidence(ticketID: String, images: List, notes: String): Boolean
-+ requestAdditionalInfo(ticketID: String): Boolean
-+ setAvailabilityStatus(status: String): void
+\
+\+ viewAssignedTasks(): List
+\
+\+ acceptTask(ticketID: String): Boolean
+\
+\+ declineTask(ticketID: String, reason: String): Boolean
+\
+\+ updateTaskStatus(ticketID: String, status: String): Boolean
+\
+\+ uploadMaintenanceEvidence(ticketID: String, images: List, notes: String): Boolean
+\
+\+ requestAdditionalInfo(ticketID: String): Boolean
+\
+\+ setAvailabilityStatus(status: String): void
 
 Responsibilities:
 - Perform maintenance tasks and update their status
@@ -114,13 +139,20 @@ Attributes:
 - adminLevel: String (private)
 
 Methods:
-+ viewSystemDashboard(): void
-+ assignTicket(ticketID: String, technicianID: String): Boolean
-+ reassignTicket(ticketID: String, technicianID: String): Boolean
-+ manageUserAccount(userID: String, action: String): Boolean
-+ updateTicketPriority(ticketID: String, priority: String): Boolean
-+ generateReports(type: String, dateRange: String): File
-+ configureSystemRules(): void
+\
+\+ viewSystemDashboard(): void
+\
+\+ assignTicket(ticketID: String, technicianID: String): Boolean
+\
+\+ reassignTicket(ticketID: String, technicianID: String): Boolean
+\
+\+ manageUserAccount(userID: String, action: String): Boolean
+\
+\+ updateTicketPriority(ticketID: String, priority: String): Boolean
+\
+\+ generateReports(type: String, dateRange: String): File
+\
+\+ configureSystemRules(): void
 
 Responsibilities:
 - Oversee system operations and performance
@@ -148,12 +180,18 @@ Attributes:
 - similarityFlag: Boolean (private)
 
 Methods:
-+ create(): Boolean
-+ updateStatus(status: String): Boolean
-+ addComment(comment: String): Boolean
-+ attachImages(images: List): Boolean
-- checkForDuplicates(): Boolean
-- calculateEstimatedCompletion(): DateTime
+\
+\+ create(): Boolean
+\
+\+ updateStatus(status: String): Boolean
+\
+\+ addComment(comment: String): Boolean
+\
+\+ attachImages(images: List): Boolean
+\
+\- checkForDuplicates(): Boolean
+\
+\- calculateEstimatedCompletion(): DateTime
 
 Responsibilities:
 - Store and manage maintenance request lifecycle
@@ -174,9 +212,12 @@ Attributes:
 - expirationDate: DateTime (private)
 
 Methods:
-+ markAsRead(): void
-- deleteExpired(): void
-- send(): Boolean
+\
+\+ markAsRead(): void
+\
+\- deleteExpired(): void
+\
+\- send(): Boolean
 
 Responsibilities:
 - Notify users of important system events
@@ -194,7 +235,8 @@ Attributes:
 - geoCoordinates: String (private)
 
 Methods:
-+ getLocationDetails(): String
+\
+\+ getLocationDetails(): String
 
 Responsibilities:
 - Represent physical locations for maintenance requests
