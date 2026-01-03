@@ -40,10 +40,19 @@
 #pagebreak()
 #text(size: 16pt,[*Version Control*])
 #table(
-  columns :2, align: left,
-  [*Version*], [*Description*],
-  [Version 1.0],[Initial version for the software documentation. Added Project Initiation and Project Management Plan]
+  columns: 2,
+  align: left,
 
+  [*Version*], [*Description*],
+
+  [Version 1.0],
+  [Initial version of the software documentation. Added Chapter 1 (Project Initiation) and Chapter 2 (Project Management Plan).],
+
+  [Version 2.0],
+  [Updated version of the software documentation. Added Chapter 3 (Software Requirements Specifications).],
+
+  [Version 3.0],
+  [Updated version of the software documentation. Added Chapter 4 (System Analysis and Design), Chapter 5 (User Manual), and Chapter 6 (References), excluding implementation details.]
 )
 #text(size: 16pt,[*Excutive Summary*])
 
@@ -76,3 +85,6 @@
 #include "chapters/chapter2/chapter2.typ"
 #include "chapters/chapter3/chapter3.typ"
 #include "chapters/chapter4/chapter4.typ"
+
+#include "chapters/endingchapters/endingchapters.typ"
+
