@@ -1,11 +1,13 @@
-== DFDs
-
+== Structured Analysis and Design
+=== Level 0 DFD
 #figure(
   image(
 "../../assets/chapter4/DFD/Level0.png"
 ),
   caption: [DFD Level 0]
 )<DFD_Level0>
+
+=== Level 1 DFDs
 
 #figure(
   image(
@@ -43,8 +45,17 @@
 )<DFD_Level1F5>
 
 
-== Data Dictionaries
-=== Data flow
+
+=== Data Dictionary
+
+
+
+
+
+
+
+
+==== Data flow
 
 
 
@@ -956,4 +967,487 @@ align: left,
 ),
 caption: [Data Flow 47 Details],
 )
+==== Data Structures
+1. Maintenance Request Submission
+
+Maintenance Request Submission =
+Title +
+Description +
+Service Category +
+Priority Level +
+(Location) +
+(Attachment) +
+Timestamp +
+Requester Username
+
+2. Technician Response
+
+Technician Response =
+Ticket ID +
+Technician Reply +
+(Actions Taken) +
+(Current Status) +
+Timestamp +
+Responder Technician Name
+
+3. Ticket Review Summary (Resident)
+
+Ticket Review Summary =
+Title +
+Description +
+Priority Level +
+Status +
+(Technician Reply) +
+Timestamp
+
+4. Full Ticket Review for Admin
+
+Full Ticket Review for Admin =
+Maintenance Request Submission +
+Technician Response Record +
+(Escalation Level) +
+(Admin Notes)
+
+5. Notification Message
+
+Notification Message =
+Ticket ID +
+Username +
+Notification Type +
+Status +
+Timestamp
+
+6. Analytics Filter Parameters
+
+Analytics Filter Parameters =
+(Date Range) +
+(Service Category) +
+(Priority Level) +
+(Status) +
+(Technician) +
+(Export Format)
+
+7. Aggregated Maintenance Summary
+
+Aggregated Maintenance Summary =
+{ Service Category + Total Tickets + Average Resolution Time } +
+{ Priority Level + Ticket Count } +
+(Most Frequent Issue Category) +
+(Least Frequent Issue Category) +
+Time Period
+
+8. Ticket Status
+
+Ticket Status =
+[ New |
+In Progress |
+Completed |
+Rejected |
+On Hold |
+Closed |
+Reopened ]
+
+9. Service Category
+
+Service Category =
+[ Plumbing |
+Electrical |
+HVAC |
+Structural |
+IT Infrastructure |
+Cleaning Services |
+Safety Systems |
+Other ]
+
+Data Elements
+1. CAPTCHA Code
+
+Alias: Verification Code
+Description: Randomized alphanumeric string used to verify human interaction during login.
+Type: Alphanumeric
+Length: 5
+Input Format: X(5)
+Output Format: X(5)
+Base or Derived: Derived
+Default Value: None
+Continuous/Discrete: Discrete
+Comments: Generated per session and expires after use.
+
+2. SMS Verification Code
+
+Alias: Admin SMS Token
+Description: One-time numeric code sent to administrators for login verification.
+Type: Numeric
+Length: 6
+Input Format: 9(6)
+Output Format: 9(6)
+Base or Derived: Derived
+Default Value: None
+Continuous/Discrete: Discrete
+Comments: Valid for 5 minutes; admin-only authentication.
+
+3. Title
+
+Alias: Maintenance Request Title
+Description: Short summary of the maintenance issue.
+Type: Alphanumeric
+Length: 80 characters
+Input Format: X(80)
+Continuous/Discrete: Continuous
+Base or Derived: Base
+Default Value: None
+Comments: Displayed in ticket lists and reports.
+
+4. Description
+
+Alias: Issue Description
+Description: Detailed explanation of the reported maintenance problem.
+Type: Text
+Length: 1000 characters
+Input Format: X(1000)
+Continuous/Discrete: Continuous
+Base or Derived: Base
+Default Value: None
+Comments: Must be at least 20 characters.
+
+5. Service Category
+
+Alias: Maintenance Category
+Description: Type of maintenance service requested.
+Type: Enum
+Length: Max 40 characters
+Input Format: Dropdown list
+Continuous/Discrete: Discrete
+Base or Derived: Base
+Default Value: “Other”
+Comments: Used for analytics and technician assignment.
+
+6. Priority Level
+
+Alias: Urgency Level
+Description: Indicates urgency of the maintenance request.
+Type: Enum
+Length: 1 value
+Input Format: Selection
+Continuous/Discrete: Discrete
+Base or Derived: Base
+Default Value: Medium
+Comments: Affects escalation and response time.
+
+7. Attachment
+
+Alias: Uploaded Evidence
+Description: Optional image or document supporting the maintenance request.
+Type: Binary
+Length: Up to 5MB
+Input Format: JPG, PNG, PDF
+Continuous/Discrete: Discrete
+Base or Derived: Base
+Default Value: None
+Comments: Stored securely and linked to the ticket.
+
+8. Timestamp
+
+Alias: Submission Date
+Description: Date and time when a ticket or response is created.
+Type: DateTime
+Length: 14 characters
+Input Format: yyyy-mm-dd hh:mm:ss
+Continuous/Discrete: Continuous
+Base or Derived: Derived
+Default Value: System time
+Comments: Used for sorting, filtering, and SLA tracking.
+
+9. Username
+
+Alias: System User Identifier
+Description: Unique identifier of the user submitting the request.
+Type: Alphanumeric
+Length: 10 characters
+Input Format: X(10)
+Continuous/Discrete: Discrete
+Base or Derived: Base
+Default Value: Retrieved from authenticated session
+Comments: Not publicly visible.
+
+10. Ticket ID
+
+Alias: Maintenance Ticket Identifier
+Description: Unique system-generated identifier for each maintenance request.
+Type: Alphanumeric
+Length: 20 characters
+Input Format: TKT-YYYYMMDD-XXXXX
+Continuous/Discrete: Discrete
+Base or Derived: Derived
+Default Value: Auto-generated
+Comments: Primary reference across all system modules.
+==== Data Stores
+#show figure: set block(breakable:true)
+#figure(
+table(
+columns: 2,
+align: left,
+[*Field*], [*Details*],
+
+[ID], [D1],
+[Name], [User Database],
+[Alias], [User Data File],
+[Description], [Stores user credentials, profiles, roles, and account status.],
+[File Type], [Computerized],
+[File Format], [Relational Database (SQL)],
+[Record Size], [Approx. 1 KB],
+[Maximum Records], [100,000],
+[Average Records], [50,000],
+[Percent Growth/Year], [10%],
+
+[Data Set / Table Name], [Users],
+[Data Structure], [User Profile Data],
+[Primary Key], [User ID],
+[Secondary Keys], [Username, Email, National ID, Role, Account Status]
+),
+caption: [Data Store D1: User Database],
+)
+
+
+#figure(
+table(
+columns: 2,
+align: left,
+[*Field*], [*Details*],
+
+[ID], [D2],
+[Name], [Tickets Database],
+[Alias], [Ticket Data File],
+[Description], [Stores all maintenance ticket records and their lifecycle states.],
+[File Type], [Computerized],
+[File Format], [Relational Database (SQL)],
+[Record Size], [Approx. 1 KB],
+[Maximum Records], [500,000],
+[Average Records], [200,000],
+[Percent Growth/Year], [12%],
+
+[Data Set / Table Name], [Tickets],
+[Data Structure], [Maintenance Request Submission + Ticket Status],
+[Primary Key], [Ticket ID],
+[Secondary Keys], [Resident ID, Technician ID, Status, Priority, Service Category, Created Date]
+),
+caption: [Data Store D2: Tickets Database],
+)
+
+
+#figure(
+table(
+columns: 2,
+align: left,
+[*Field*], [*Details*],
+
+[ID], [D3],
+[Name], [Maintenance History],
+[Alias], [Maintenance Record File],
+[Description], [Stores completed maintenance records for audit and reporting.],
+[File Type], [Computerized],
+[File Format], [Relational Database (SQL)],
+[Record Size], [Approx. 800 bytes],
+[Maximum Records], [100,000],
+[Average Records], [50,000],
+[Percent Growth/Year], [10%],
+
+[Data Set / Table Name], [MaintenanceHistory],
+[Data Structure], [Maintenance Completion Record],
+[Primary Key], [History ID],
+[Secondary Keys], [Ticket ID, Technician ID, Completion Date, Final Status]
+),
+caption: [Data Store D3: Maintenance History],
+)
+
+
+
+#figure(
+table(
+columns: 2,
+align: left,
+[*Field*], [*Details*],
+
+[ID], [D4],
+[Name], [Reports & Analytics],
+[Alias], [Reporting File],
+[Description], [Stores generated analytics reports and KPI metrics.],
+[File Type], [Computerized],
+[File Format], [Relational Database (SQL)],
+[Record Size], [Approx. 1 KB],
+[Maximum Records], [100,000],
+[Average Records], [25,000],
+[Percent Growth/Year], [15%],
+
+[Data Set / Table Name], [AnalyticsReports],
+[Data Structure], [Aggregated Maintenance Summary],
+[Primary Key], [Report ID],
+[Secondary Keys], [Date Range, Service Category, Priority Level, Generated Date]
+),
+caption: [Data Store D4: Reports & Analytics],
+)
+
+==== Data Elements
+
+
+
+
+
++ * CAPTCHA Code*
+
+  - Alias: Verification Code
+  - Description: A randomized alphanumeric string used to confirm that the login attempt is made by a human user.
+  - Type: Alphanumeric
+  - Length: 5
+  - Input Format: X(5)
+  - Output Format: X(5)
+  -  Base or Derived: Derived
+  -  Default Value: None
+  - Continuous/Discrete: Discrete
+  -  Comments: Generated per session and expires after use.
+
++ *Username*
+
+  - Alias: System User Identifier
+  - Description: Unique identifier used by a user to access the system.
+  - Type: Alphanumeric
+  - Length: 10
+  - Input Format: X(10)
+  - Output Format: X(10)
+  - Base or Derived: Base
+  - Default Value: None
+  - Continuous/Discrete: Discrete
+  - Comments: Must be unique across the system.
+
++ *Email Address*
+
+  - Alias: User Email
+  - Description: Email address associated with the user account.
+  - Type: Alphanumeric
+  - Length: 100
+  - Input Format: email\@domain
+  - Output Format: email\@domain
+  - Base or Derived: Base
+  - Default Value: None
+  - Continuous/Discrete: Discrete
+  - Comments: Used for communication and password recovery.
+
++ *Password Hash*
+
+  - Alias: Encrypted Password
+  - Description: Securely hashed version of the user’s password.
+  - Type: Alphanumeric
+  - Length: 255
+  - Input Format: System-generated
+  - Output Format: Hashed value
+  - Base or Derived: Derived
+  - Default Value: None
+  - Continuous/Discrete: Discrete
+  - Comments: Plain-text passwords are never stored.
+
+
++ *User Role*
+
+  - Alias: Account Role
+  - Description: Defines the access level of the user.
+  - Type: Enum
+  - Length: 1 value
+  - Input Format: Selection
+  - Output Format: Text
+  - Base or Derived: Base
+  - Default Value: User
+  - Continuous/Discrete: Discrete
+  - Comments: Possible values: Resident, Technician, Admin.
+
++ *Ticket ID*
+
+  - Alias: Maintenance Ticket Identifier
+  - Description: Unique identifier assigned to each maintenance request.
+  - Type: Alphanumeric
+  - Length: 20
+  - Input Format: TKT-YYYYMMDD-XXXXX
+  - Output Format: Same as input
+  - Base or Derived: Derived
+  - Default Value: Auto-generated
+  - Continuous/Discrete: Discrete
+  - Comments: Used to track tickets across the system.
+
++ *Ticket Title*
+
+  - Alias: Maintenance Request Title
+  - Description: Short summary describing the maintenance issue.
+  - Type: Alphanumeric
+  - Length: 80
+  - Input Format: X(80)
+  - Output Format: X(80)
+  - Base or Derived: Base
+  - Default Value: None
+  - Continuous/Discrete: Continuous
+  - Comments: Displayed in ticket lists and reports.
+
++ *Ticket Description*
+
+  - Alias: Issue Description
+  - Description: Detailed explanation of the maintenance problem.
+  - Type: Text
+  - Length: 1000
+  - Input Format: X(1000)
+  - Output Format: X(1000)
+  - Base or Derived: Base
+  - Default Value: None
+  - Continuous/Discrete: Continuous
+  - Comments: Must be at least 20 characters.
+
++ *Service Category*
+
+  - Alias: Maintenance Category
+  - Description: Classification of the maintenance issue.
+  - Type: Enum
+  - Length: Max 40
+  - Input Format: Dropdown
+  - Output Format: Text
+  - Base or Derived: Base
+  - Default Value: Other
+  - Continuous/Discrete: Discrete
+  - Comments: Used for analytics and technician assignment.
+
++ *Priority Level*
+
+  - Alias: Urgency Level
+  - Description: Indicates urgency of the maintenance request.
+  - Type: Enum
+  - Length: 1 value
+  - Input Format: Selection
+  - Output Format: Text
+  - Base or Derived: Base
+  - Default Value: Medium
+  - Continuous/Discrete: Discrete
+  - Comments: Affects escalation and response time.
+
++ *Ticket Status*
+
+  - Alias: Maintenance Status
+  - Description: Current processing state of the maintenance request.
+  - Type: Enum
+  - Length: 1 value
+  - Input Format: System-controlled
+  - Output Format: Text
+  - Base or Derived: Derived
+  - Default Value: New
+  - Continuous/Discrete: Discrete
+  - Comments: Examples: New, In Progress, Completed, Closed.
+
++  *Timestamp*
+
+  - Alias: System Date and Time
+  - Description: Date and time when an action occurs in the system.
+  - Type: DateTime
+  - Length: 14 characters
+  - Input Format: YYYY-MM-DD HH:MM:SS
+  - Output Format: Same as input
+  - Base or Derived: Derived
+  - Default Value: System time
+  - Continuous/Discrete: Continuous
+  - Comments: Used for auditing and reporting.
+
 
